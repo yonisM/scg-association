@@ -1,0 +1,30 @@
+<ion-view title="Step 1: Select a Theme" id="page1" style="background-color:default;">
+    <ion-content padding="true" class="has-header">
+    <div class="container">
+       <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 1 of 6</span></p>
+    
+        <div class = "visible-xs" id="mobileInfo"> Scroll down to the bottom of the page to save your Theme selection</div>
+        <form ng-submit = "personalDetails()">
+        <div class="row">
+       <div class="col-md-12" > 
+	      <div class="col-xs-12 col-sm-6 col-md-3"  ng-repeat = "x in theme|orderBy:'themeNumber'">
+             <label class = "radio-inline" > <h4 class="text-center"><input type = "radio" name = "themeSelection" ng-model = "themeSelected" value = "{{x.themeNumber}}" ng-click = "{color:'red'}">Theme {{x.themeNumber}}</h4>
+                 <img src="{{x.image}}"  width = "400px"  height = "20px" id ="themeImage"  alt="" class="img-responsive center-block"> 
+                   <a href="{{x.hyperlink}}"> Preview This Theme</a>
+                </label>
+            
+	      </div>
+	       </div>
+        </div>
+        
+           
+	   <div class = "form-group">
+	   <div class="col-xs-12">
+	         <button type = "submit" class="btn btn-danger btn-block borders" id="button1">Save</button>
+	   </div>
+	   </div>
+        </form>
+  
+</div> 
+    </ion-content>
+</ion-view>

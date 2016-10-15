@@ -1,0 +1,77 @@
+<!-- style.css is our stylesheet! Make use of it -->
+
+<ion-view title="Step 2: Add Personal Details" id="page2">
+    <ion-content padding="true " class="has-header">
+	
+	<div class="container">
+
+	<p id = "topSection"><button type = "button" id = "infoIcon"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 2 of 6</span></p>
+       
+       <p class="text-danger text-center" id = "advisoryText">Any field that is marked with asterisk * is a required field</p>
+   
+        <!-- 
+            Clicking the submit button will result in the Customer's details being processed under the controller
+             step2AddPersonalDetailsCtrl in the controller.js file. Once in the controller.js file, their details will
+             then be carried over via the API and straight into the database. The moment this page, step2AddPersonalDetails is served
+             up, the route.js will make the step2AddPersonalDetailsCtrl available for use.
+        -->
+        
+        <form  name = "step1PersonalDetails" class="form-horizontal">
+           <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" >First Name <span id="asterisks">&#42;</span></label>
+                <div class="col-sm-4">
+                <input type="text" class="form-control"  ng-model = "customerDetails.firstName" id="allInputFieldsStyling" required>
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md">Last Name <span id="asterisks">&#42;</span></label>
+                <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model = "customerDetails.lastName" id="allInputFieldsStyling" required>
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >Email Address <span style="color:red;">&#42;</span></label>
+                <div class="col-sm-4">
+                <input type="email" class="form-control" ng-model = "customerDetails.email" id="allInputFieldsStyling" required>
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >Phone Number</label>
+                <div class="col-sm-4">
+                <input type="email" class="form-control" ng-model = "customerDetails.phoneNumber" id="allInputFieldsStyling">
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >LinkedIn Link</label>
+                <div class="col-sm-4">
+                <input type="text" class="form-control"  ng-model="customerDetails.linkedin" id="allInputFieldsStyling">
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md">Date Of birth</label>
+                <div class="col-sm-4">
+                <input type="date" class="form-control" ng-model="customerDetails.dob"  id="allInputFieldsStyling">
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >Attach your resume <span id="asterisks">&#42;</span> </label>
+                <div class="col-sm-5">
+                 <input type="file" class="btn btn-default btn-file" required>
+                </div>
+           </div>
+          
+               <p class="text-center">Don't Have a CV/Resume? No worries, click <a href="#">Here</a> to quickly create your own.
+               Remember! We will also edit your CV for you. 
+               </p>
+      <div class="form-group">
+	   <div class="col-xs-12">
+           <button type = "submit" class="btn btn-danger btn-block borders" id = "button1"  ng-click = "sendDetails()"> Save </button>
+	   </div>
+	   </div>
+        </form>
+            
+	
+        </div>
+
+	</ion-content>
+</ion-view>

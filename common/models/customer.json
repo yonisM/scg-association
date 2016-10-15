@@ -1,0 +1,68 @@
+{
+  "name": "Customer",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "mysql": {
+      "table": "customer"
+    },
+    "mongodb": {
+      "collection": "customer"
+    },
+    "oracle": {
+      "schema": "DEMO",
+      "table": "CUSTOMER"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "length": 20,
+      "oracle": {
+        "columnName": "ID",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "email": {
+      "type": "String",
+      "length": 40,
+      "oracle": {
+        "columnName": "NAME",
+        "dataType": "VARCHAR2",
+        "dataLength": 40,
+        "nullable": "Y"
+      }
+    },
+    "password": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "themes": {
+      "type": "hasOne",
+      "model": "theme",
+      "foreignKey": ""
+    },
+    "personalDetails": {
+      "type": "hasMany",
+      "model": "personalDetails",
+      "foreignKey": ""
+    },
+    "summaries": {
+      "type": "hasOne",
+      "model": "summary",
+      "foreignKey": ""
+    },
+    "additionalInformations": {
+      "type": "hasOne",
+      "model": "additionalInformation",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

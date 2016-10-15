@@ -1,0 +1,27 @@
+{
+  "name": "additionalInformation",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sectionIncluded": {
+      "type": "string"
+    },
+    "summarySection": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "fieldOfResearch": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

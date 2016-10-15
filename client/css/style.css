@@ -1,0 +1,71 @@
+#allInputFieldsStyling{
+    padding:10px;
+    border:1px solid black;
+}
+
+#asterisks{
+    color:red;
+}
+
+#infoIcon{
+    background-color:white;
+    border:1px solid white;
+}
+
+#topSection{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+#advisoryText{
+    margin-bottom:30px;
+}
+
+#themeImage:hover{
+    border:5px solid red;
+     
+}
+
+ #button1 {
+        width:100%;
+        }
+
+
+
+
+@media (min-width: 320px) {
+    #button1 {
+        margin-top:20px;
+        margin-bottom:20px; 
+        width:100%;
+        }
+    
+    #mobileInfo{
+        margin-bottom:20px;
+        margin-left:20px;
+    }
+    
+   
+    
+    
+}
+
+
+@media (min-width: 768px) {
+    #button1 {
+        width:60%;
+        margin-left:20%;
+        margin-top:30px;
+        }
+}
+
+@media (min-width: 992px) {
+   
+    #button1 {
+        width:30%;
+        margin-left:30%;
+        }
+
+
+}
+

@@ -1,0 +1,44 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "geo": {
+    "name": "geo",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
+  },
+  "landsome": {
+    "host": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix.cloudant.com",
+    "port": 443,
+    "url": "https://dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix:58aac4c1cc1783ec2519d444fa04001218ee05d56b6e04848fc234a23490abaa@dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix.cloudant.com",
+    "database": "landsome",
+    "password": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix",
+    "name": "landsome",
+    "connector": "cloudant",
+    "user": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix"
+  }
+}
