@@ -30,6 +30,10 @@
         width:100%;
         }
 
+#dashboard-list-item:hover{
+    cursor: pointer;
+}
+
 
 
 
@@ -46,8 +50,7 @@
     }
     
    
-    
-    
+ 
 }
 
 
