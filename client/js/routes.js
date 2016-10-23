@@ -75,6 +75,24 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('dashboard.login', {
+    url: '/login',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/login.html',
+        controller: 'userCtrl'
+      }
+    }
+  })
+  .state('dashboard.signup', {
+    url: '/signup',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/signup.html',
+        controller: ''
+      }
+    }
+  })
 
 $urlRouterProvider.otherwise('/dashboard/theme')
 
