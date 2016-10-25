@@ -31,7 +31,7 @@ angular.module('app.routes', [])
   })
 
   .state('dashboard.step3Summary', {
-    url: '/ summary',
+    url: '/summary',
     views: {
       'side-menu21': {
         templateUrl: 'templates/step3Summary.html',
@@ -43,6 +43,7 @@ angular.module('app.routes', [])
   .state('dashboard', {
     url: '/dashboard',
     templateUrl: 'templates/dashboard.html',
+    controller:'userCtrl',
     abstract:true
   })
 
@@ -89,7 +90,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/signup.html',
-        controller: ''
+        controller: 'userCtrl'
       }
     }
   })

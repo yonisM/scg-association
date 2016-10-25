@@ -76,11 +76,64 @@ function ($scope, $stateParams) {
 
 
 }])
-.controller('userCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('userCtrl', ['$scope', '$stateParams','Customer','$state','$q','$timeout', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
 
+    
+function ($scope, $stateParams,Customer,$state,$q,$timeout) {
+   
+    //sign up a new user
+    var signup = {
+        email: "yonis.mohamoud@ba.com",
+        password:"Watchmen123" 
+    }
+    $scope.signup = signup;   
+    
+     $scope.register = function() {
+      //Customer.create(signup);
+     
+     };
+
+    
+    //Login a user. Test details      yonis.mohamoud@ba.com / Watchmen123
+    var login = {
+      email:"yonis.mohamoud@ba.com",
+        password:"Watchmen123" 
+    }
+    
+    
+    $scope.login = login; 
+    
+    $scope.loginUser = function(){
+        Customer.login(login)
+        .$promise
+        .then(function() {
+    $state.transitionTo('dashboard.step1SelectATheme');
+    location.reload();
+        });
+         
+    };
+    
+    //Logout the user
+    
+   $scope.logoutUser = function(){
+    Customer.logout()
+    .$promise
+        .then(function() {
+         $state.transitionTo('dashboard.login');
+         $timeout(function(){
+            location.reload();
+         },3000)
+        });
+        
+    };
+    
+    //Get Current Customer information
+    $scope.currentUser = Customer.getCurrent();
+    $scope.isAuthenticated = Customer.isAuthenticated(); 
+
+  
 
 }])
  
