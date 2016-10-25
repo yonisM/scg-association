@@ -9,14 +9,14 @@
             <div class="form-group">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                <input type="email" class="form-control" id="allInputFieldsStyling" placeholder="Email Address" required>
+                <input type="email" class="form-control" id="allInputFieldsStyling" ng-model = "signup.email" placeholder="Email Address" required>
                 </div>
            </div>
          <div class="form-group">
             
                 <div class="col-sm-4"></div>
                  <div class="col-sm-4">
-                <input type="password" class="form-control" id="allInputFieldsStyling" placeholder="Password" required>
+                <input type="password" class="form-control" id="allInputFieldsStyling" ng-model = "signup.password" placeholder="Password" required>
                 </div>
            
            </div>
@@ -32,7 +32,7 @@
          <div class="form-group">
          <div class="col-sm-4"></div>
 	   <div class="col-sm-4">
-           <button type = "submit" class="btn btn-danger btn-block borders"> Sign up </button>
+           <button type = "submit" class="btn btn-danger btn-block borders" ng-click = "register()"> Sign up </button>
 	   </div>
 	   </div>
 	   

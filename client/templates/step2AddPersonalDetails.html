@@ -16,24 +16,31 @@
              up, the route.js will make the step2AddPersonalDetailsCtrl available for use.
         -->
         
-        <form  name = "step1PersonalDetails" class="form-horizontal">
+        <form  name = "step1PersonalDetails " class="form-horizontal" novalidate>
            <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" >First Name <span id="asterisks">&#42;</span></label>
                 <div class="col-sm-4">
-                <input type="text" class="form-control"  ng-model = "customerDetails.firstName" id="allInputFieldsStyling" required>
+                <input type="text" class="form-control"  name="firstName" ng-model = "customerDetails.firstName" id="allInputFieldsStyling" required>
+                    <p ng-show="step1PersonalDetails.firstName.$error.required && step1PersonalDetails.firstName.$dirty " style="color:maroon "> Please Enter your first name </p>
                 </div>
+                
            </div>
            <div class="form-group">
                <label class="control-label col-sm-4 input-md">Last Name <span id="asterisks">&#42;</span></label>
                 <div class="col-sm-4">
-                <input type="text" class="form-control" ng-model = "customerDetails.lastName" id="allInputFieldsStyling" required>
+                <input type="text" class="form-control" name="lastName" ng-model = "customerDetails.lastName" id="allInputFieldsStyling" required>
+                <p ng-show="step1PersonalDetails.lastName.$error.required && step1PersonalDetails.lastName.$dirty " style="color:maroon "> Please Enter your last name </p>
                 </div>
            </div>
            <div class="form-group">
                <label class="control-label col-sm-4 input-md" >Email Address <span style="color:red;">&#42;</span></label>
                 <div class="col-sm-4">
-                <input type="email" class="form-control" ng-model = "customerDetails.email" id="allInputFieldsStyling" required>
+                <input type="email" class="form-control" name="email" ng-model = "customerDetails.email" id="allInputFieldsStyling" required>
+                   <p ng-show="step1PersonalDetails.email.$error.required && !step1PersonalDetails.email.$pristine " style="color:maroon "> Please Enter your Email address </p>
+                   <p ng-show="step1PersonalDetails.email.$invalid && step1PersonalDetails.email.$dirty " style="color:maroon "> Please Enter a valid Email address </p>
+                   
                 </div>
+                 
            </div>
            <div class="form-group">
                <label class="control-label col-sm-4 input-md" >Phone Number</label>
@@ -54,9 +61,10 @@
                 </div>
            </div>
            <div class="form-group">
-               <label class="control-label col-sm-4 input-md" >Attach your resume <span id="asterisks">&#42;</span> </label>
+               <label class="control-label col-sm-4 input-md" >Attach your resume </label>
                 <div class="col-sm-5">
-                 <input type="file" class="btn btn-default btn-file" required>
+                 <input type="file" class="btn btn-default btn-file" name="resume" ng-model = "customerDetails.resume">
+                
                 </div>
            </div>
           
@@ -65,7 +73,7 @@
                </p>
       <div class="form-group">
 	   <div class="col-xs-12">
-           <button type = "submit" class="btn btn-danger btn-block borders" id = "button1"  ng-click = "sendDetails()"> Save </button>
+           <button type = "submit" class="btn btn-danger btn-block borders" id = "button1"  ng-disabled="step1PersonalDetails.$invalid" ng-click = "sendDetails()"> Save </button>
 	   </div>
 	   </div>
         </form>
