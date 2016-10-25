@@ -95,7 +95,7 @@ angular.module('app.routes', [])
     }
   })
 
-$urlRouterProvider.otherwise('/dashboard/theme')
+$urlRouterProvider.otherwise('/dashboard/login')
 
   
 
