@@ -6,17 +6,17 @@
              
             <form class="form-horizontal" >
              <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
-             <input type="checkbox" value=""> Tick to include this section in your Portfolio</div>
+             <input type="checkbox" value="" ng-model="isChecked"> Tick to include this section in your Portfolio</div>
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="Teaching Experience" style="padding:10px;border:1px solid black;">
+                <input type="text" class="form-control" ng-disabled="!isChecked"placeholder="Teaching Experience" style="padding:10px;border:1px solid black;">
                 </div>
            </div>
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="summary">Summary of your experience </label>
                 <div class="col-sm-5">
-                <textarea class="form-control" rows="11" id="summary" placeholder="As an instructor in economics at an undergraduate level, i find that it's very important for my students to leave the course with only competency in the course material, but the tools to succeed in future courses or endeavors. I also seek for them to be able to effectively communicate economic ideas and to be able t evaluate competing claims using economic principles learned in the course. To this end, it is important that students are exposed to current research in the field."  style="padding:10px;border:1px solid black;"></textarea>
+                <textarea class="form-control" ng-disabled="!isChecked" rows="11" id="summary" placeholder="As an instructor in economics at an undergraduate level, i find that it's very important for my students to leave the course with only competency in the course material, but the tools to succeed in future courses or endeavors. I also seek for them to be able to effectively communicate economic ideas and to be able t evaluate competing claims using economic principles learned in the course. To this end, it is important that students are exposed to current research in the field."  style="padding:10px;border:1px solid black;"></textarea>
                 </div>
            </div>
            
