@@ -12,6 +12,12 @@ angular.module('app.routes', [])
     url: '/home',
     templateUrl: 'templates/home.html'
   })
+  
+    .state('checkout', {
+    url: '/checkout',
+    templateUrl: 'templates/checkout.html'
+  })
+  
       .state('dashboard.step1SelectATheme', {
     url: '/theme',
     views: {
