@@ -8,14 +8,17 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-  
-
+   .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  })
       .state('dashboard.step1SelectATheme', {
     url: '/theme',
     views: {
       'side-menu21': {
         templateUrl: 'templates/step1SelectATheme.html',
-        controller: 'step1SelectAThemeCtrl'
+        controller: 'step1SelectAThemeCtrl',
+        authenticate:true
       }
     }
   })
@@ -26,6 +29,16 @@ angular.module('app.routes', [])
       'side-menu21': {
         templateUrl: 'templates/step2AddPersonalDetails.html',
         controller: 'step2AddPersonalDetailsCtrl'
+      }
+    }
+  })
+  
+   .state('dashboard.dashboardPage', {
+    url: '/dashboardPage',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/dashboardPage.html',
+        controller: 'userCtrl'
       }
     }
   })
@@ -52,7 +65,8 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/step4AdditionalInformationAboutYourself.html',
-        controller: 'step4AdditionalInformationAboutYourselfCtrl'
+        controller: 'step4AdditionalInformationAboutYourselfCtrl',
+        authenticate: true
       }
     }
   })

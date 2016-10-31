@@ -39,7 +39,7 @@ function ($scope, $stateParams, PersonalDetails) {
     $scope.customerDetails = customerDetails; 
     
     $scope.sendDetails = function(){
-        //Customer.PersonalDetails.create(customerDetails);
+        //Customer.PersonalDetails.create(customerDetails)
     }; 
    
 
@@ -85,22 +85,26 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
    
     //sign up a new user
     var signup = {
-        email: "yonis.mohamoud@ba.com",
-        password:"Watchmen123" 
+        email: "",
+        password:"" 
     }
     $scope.signup = signup;   
     
-     $scope.register = function() {
-      //Customer.create(signup);
-     
-     };
+     /*$scope.register = function() {
+      Customer.create(signup)
+        .$promise
+        .then(function(){
+            $state.go('dashboard.login');
+            location.reload();
+        })
+     }; */
 
     
-    //Login a user. Test details      yonis.mohamoud@ba.com / Watchmen123
+    //Login a user. Test details  
     var login = {
-      email:"yonis.mohamoud@ba.com",
-        password:"Watchmen123" 
-    }
+      email:"",
+        password:"" 
+    };
     
     
     $scope.login = login; 
@@ -109,7 +113,7 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
         Customer.login(login)
         .$promise
         .then(function() {
-    $state.transitionTo('dashboard.step1SelectATheme');
+    $state.go('dashboard.step1SelectATheme');
     location.reload();
         });
          
@@ -120,13 +124,12 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
    $scope.logoutUser = function(){
     Customer.logout()
     .$promise
-        .then(function() {
-         $state.transitionTo('dashboard.login');
-         $timeout(function(){
+    .then(function() {
+    $state.transitionTo('dashboard.login');
+            $timeout(function(){
             location.reload();
          },3000)
-        });
-        
+        }); 
     };
     
     //Get Current Customer information

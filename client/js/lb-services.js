@@ -5,7 +5,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
   // Sample usage:
   //
   //   import lbServices from './lb-services';
-   //  angular.module('app', [lbServices]);
+  //   angular.module('app', [lbServices]);
   //
   module.exports = "lbServices";
 }

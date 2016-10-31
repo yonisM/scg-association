@@ -8,3 +8,4 @@ applications:
   disk_quota: 512M
   services:
   - Cloudant NoSQL DB-eq
+command: node .

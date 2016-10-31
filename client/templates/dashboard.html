@@ -1,16 +1,16 @@
   <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
         <ion-nav-bar class="bar-stable">
-            <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            <ion-nav-buttons side="left" >
+                <button class="button button-icon button-clear ion-navicon"  menu-toggle="left"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
     <ion-side-menu side="left" id="side-menu21">
         <ion-header-bar class="bar-stable">
-            <div class="title">Dashboard</div>
-        </ion-header-bar>
+            <div class="title" ui-sref="dashboard.dashboardPage" ng-show = "isAuthenticated" id="dashboard-list-item">Dashboard</div>
+        </ion-header-bar>       
         <ion-content padding="false" class="side-menu-left has-header ">
             <ion-list id="dashboard-null">
                 <ion-item class="positive" id="dashboard-list-item" ui-sref="dashboard.step1SelectATheme" ng-show = "isAuthenticated" menu-close=""><span>Step 1: Theme</span></ion-item>
@@ -19,13 +19,10 @@
                 <ion-item class="positive" id="dashboard-list-item" ui-sref="dashboard.step4AdditionalInformationAboutYourself" menu-close="" ng-show = "isAuthenticated" >Step 4: Additional Information</ion-item>
                 <ion-item class="positive" id="dashboard-list-item" ui-sref="dashboard.step5AddSampleWorkS" menu-close="" ng-show = "isAuthenticated">Step 5: Sample Work</ion-item>
                 <ion-item class="positive" id="dashboard-list-item" ui-sref="dashboard.step6AddAdditionalExperience" menu-close="" ng-show = "isAuthenticated">Step 6: Additional Experience</ion-item>
-                <ion-item class="positive" id="dashboard-list-item" ui-sref="" menu-close="">About Landsome Portfolio</ion-item>
-                <ion-item class="positive" id="dashboard-list-item" ui-sref="" menu-close="">Our Portfolio Themes</ion-item>
                 <button type = "button" class="btn btn-success btn-block borders" ui-sref="dashboard.login" ng-hide = "isAuthenticated" menu-close=""> Login </button>
-                
                 <button type = "button" class="btn btn-danger btn-block borders" ui-sref="dashboard.signup" ng-hide = "isAuthenticated" menu-close=""> Sign Up </button>
                  <a href="" class="btn btn-danger btn-block borders" target="_blank" role="button" ng-show = "isAuthenticated"  >Preview My Theme</a>
-                <button type = "button" class="btn btn-success btn-block borders" ui-sref="" menu-close="" ng-show = "isAuthenticated"> Ready to checkout </button>
+                <button type = "button" class="btn btn-success btn-block borders"  menu-close="" ng-show = "isAuthenticated"> Ready to checkout </button>
                 
                  <button type = "button" class="btn btn-primary btn-block borders" ui-sref="dashboard.login" 
                  ng-click ="logoutUser()" menu-close="" ng-show = "isAuthenticated"> Log out</button>
