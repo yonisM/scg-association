@@ -96,26 +96,19 @@ angular.module('app.routes', [])
       }
     }
   })
-  .state('dashboard.login', {
+  .state('login', {
     url: '/login',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/login.html',
-        controller: 'userCtrl'
-      }
-    }
+      templateUrl: 'templates/login.html',
+    controller: 'userCtrl'  
   })
-  .state('dashboard.signup', {
+  .state('signup', {
     url: '/signup',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/signup.html',
-        controller: 'userCtrl'
-      }
-    }
+    templateUrl: 'templates/signup.html',
+    controller: 'userCtrl'
+
   })
 
-$urlRouterProvider.otherwise('/dashboard/login')
+$urlRouterProvider.otherwise('/login')
 
   
 

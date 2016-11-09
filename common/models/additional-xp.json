@@ -1,0 +1,36 @@
+{
+  "name": "additionalXP",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "heading": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "secondpageheading": {
+      "type": "string"
+    },
+    "secondpagesubheading": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

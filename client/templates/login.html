@@ -1,10 +1,7 @@
-<ion-view title="Log in" id="page 7" style="background-color:default;">
-    <ion-content padding="true" class="has-header">
+<ion-view >
+    <ion-content>
    <div class="container">
-       <div class="alert alert-success" ng-show = "isAuthenticated">
-           <p><strong>Successfully logged out!</strong>  See you again soon!.</p>
-       </div>
-        
+
          <form  class="form-horizontal" ng-submit = "loginUser()">
           <h3 class="text-center"> Welcome to Landsome portfolio</h3>
             <div class="form-group">
@@ -28,7 +25,7 @@
            <button type = "submit"  class="btn btn-success btn-block borders"> Log in </button>
 	   </div>
 	   </div>
-	   <p class="text-center"><a ui-sref="dashboard.signup">Or create an account</a></p>
+	   <p class="text-center"><a ui-sref="signup">Or create an account</a></p>
   
        </form>
        

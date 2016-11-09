@@ -4,37 +4,156 @@
         <div class="container">
              <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 6 of 6</span></p>
              
+            <div class = col-xs-12>
             <form class="form-horizontal" >
              <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
-             <input type="checkbox" value="" ng-model="isChecked"> Tick to include this section in your Portfolio</div>
-              <div class="form-group"  >
+             <input type="checkbox" name= "tick" value = "checked" ng-model="isChecked" ><span> Tick to include this section in your Portfolio</span> </div>
+            
+                <!-- The section is to handle the details of any Additional Experience user may have. This section will 
+                     remain static. 
+                    -->
+                <h4 id ="step6title">Additional Experience</h4>
+                <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" ng-disabled="!isChecked"placeholder="Teaching Experience" style="padding:10px;border:1px solid black;">
+                <input type="text" class="form-control" ng-disabled="!isChecked" ng-model = "additionalXP.heading" placeholder="Teaching Experience" id="allInputFieldsStyling">
                 </div>
            </div>
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="summary">Summary of your experience </label>
                 <div class="col-sm-5">
-                <textarea class="form-control" ng-disabled="!isChecked" rows="11" id="summary" placeholder="As an instructor in economics at an undergraduate level, i find that it's very important for my students to leave the course with only competency in the course material, but the tools to succeed in future courses or endeavors. I also seek for them to be able to effectively communicate economic ideas and to be able t evaluate competing claims using economic principles learned in the course. To this end, it is important that students are exposed to current research in the field."  style="padding:10px;border:1px solid black;"></textarea>
+                <textarea class="form-control" ng-disabled="!isChecked" rows="13"  id="allInputFieldsStyling" placeholder="As an instructor in economics at an undergraduate level, i find that it's very important for my students to leave the course with only competency in the course material, but the tools to succeed in future courses or endeavors. I also seek for them to be able to effectively communicate economic ideas and to be able to evaluate competing claims using economic principles learned in the course. To this end, it is important that students are exposed to current research in the field." ng-model ="additionalXP.summary" ></textarea>
+                </div>
+              </div>
+            
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="profile">Include an Image for this section</label>
+                <div class="col-sm-4">
+                 <input type="file" ng-disabled = "!isChecked" class="btn btn-default btn-file" ng-model ="additionalXP.image">
+                </div>
+            </div>
+                
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="name_button" >Name of button </label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" ng-disabled = "!isChecked" id="allInputFieldsStyling" placeholder="View my Teaching Portfolio" ng-model ="additionalXP.button">
                 </div>
            </div>
-           
-            <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
-            <button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-plus-sign" onclick="" style="font-size:15px;"></span> Add More Additional Experiences</button>
+                <hr id = "divider"> 
+                
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="heading">Portfolio Page Heading<br>(2nd page) </label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model ="additionalXP.secondpageheading" ng-disabled="!isChecked"  placeholder="Teaching Portfolio" id="allInputFieldsStyling">
                 </div>
+           </div>
+                
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="heading">Portfolio Page Sub-Heading<br>(2nd page)</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model ="additionalXP.secondpagesubheading" ng-disabled="!isChecked" id="allInputFieldsStyling">
+                </div>
+           </div>
+            
+                
+            
+                <hr id = "divider"> 
+                
+                
+                <!-- Below is to handle Additional Experience. There are several dynamic features:
+                    a..) There is a rule that will prevent users from adding more than 3 details. 
+                    b..) User clicks "Add Details of Experience" button to add 1 more Detail form. 
+                    c..) User clicks "Remove detail" button to remove the selected form. 
+ng-show = "showHideDetails($index)"
+                -->
+                
+                <div ng-repeat = "x in Details | limitTo: 3" >
+            <div style = "border-bottom:1px solid black; margin-bottom:10px;" >
+                <h4 id ="step6title" >Details of Experience {{$index + 1}}</h4>
+            <button type = "button" class= "btn btn-md" ng-disabled = "!isChecked" ng-click = "removeDetail($index)" ng-value = "{{$index+1}}" ng-hide = "$first"  id = "removeExperience"><span class="glyphicon glyphicon-minus-sign"  style="font-size:15px;"></span><span> Remove Detail </span> </button>
+                <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" ng-disabled="!isChecked" ng-model = "x.heading"  id="allInputFieldsStyling">
+                </div>
+           </div>
+              <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="summary">Provide Supporting Information </label>
+                <div class="col-sm-5">
+                <textarea class="form-control" ng-disabled="!isChecked" rows="8"  id="allInputFieldsStyling" ng-model ="x.summary" ></textarea>
+                </div>
+              </div>
+                
+              <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="profile">Attach a Document</label>
+                <div class="col-sm-4">
+                 <input type="file" ng-disabled = "!isChecked" class="btn btn-default btn-file">
+                </div>
+             </div>
+                
+            
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="profile">Include an Image</label>
+                <div class="col-sm-4">
+                 <input type="file"  ng-disabled = "!isChecked"class="btn btn-default btn-file" "x.image">
+                </div>
+             </div>
+            
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="name_button">Name of button </label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" ng-disabled = "!isChecked" ng-model ="x.button" style="padding:10px; border:1px solid black;" placeholder="">
+                </div>
+           </div>   
+         
+            
+        </div>
+                    <div class = "col-xs-12">
+                    <p ng-show = "$last" ng-if ="Details.length>=3" style = "color:red;font-size:16px;" id = "addMoreExperience" > <i class="material-icons" >warning</i> If you wish to add more details, <a href =#>please get in touch</a>.</p> 
+                        </div>
+        </div>
+                <button type = "button" id = "addMoreExperience" ng-if ="!(Details.length >= 3)" ng-click="addMoreExperience()" ng-disabled="!isChecked"   ><span class="glyphicon glyphicon-plus-sign"></span> Add Details of Experience {{Details.length + 1}} </button>
+                 
+            
+    
             <div class = "form-group">
 	   <div class="col-xs-12">
-	         <button type = "submit" class="btn btn-danger btn-block borders" id="button1">Save</button>
+	         <button type = "submit" class="btn btn-danger btn-block borders" ng-disabled="!isChecked" id="button1" >Save</button>
 	   </div>
 	   </div>
             </form>  
         </div>
+            
+            <!--Keep purely for testing purposes 
+            <div class = "col-xs-3">
+                <h4><u>Additional Experience</u></h4>
+                <ul>
+            <li> Heading: {{additionalXP.heading}}</li>
+            <li> Summary: {{additionalXP.summary}}</li>
+            <li> Image: {{additionalXP.image}}</li>
+            <li> Button Name: {{additionalXP.button}}</li>
+                </ul>
+
+            <h4><u>Heading for 2nd page</u></h4>
+            <ul>
+            <li> Heading: {{additionalXP.secondpageheading}}</li>
+            <li> Summary: {{additionalXP.secondpagesubheading}}</li>
+</ul>
+         
+                <h4><u>Details</u></h4>
+            <ul ng-repeat = "x in Details">
+            <li> Heading: {{x.heading}}</li>
+            <li> Summary: {{x.summary}}</li>
+            <li> Image: {{x.image}}</li>
+            <li> Button Name: {{x.button}}</li>
+            </ul>
+            </div>
+-->
+            
+           
+            
+        </div>
         
-        
-        
-        
-        
-        
+    
     </ion-content>
 </ion-view>

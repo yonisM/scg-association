@@ -3,39 +3,42 @@
   <div class="container">
         <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 5 of 6</span></p>
              
-             <form class="form-horizontal" >
+            <div class="form-horizontal" ng-show = "!showSample">
              <div class="form-group"  >
                <label class="control-label col-sm-5 input-md" for="sample">How many sample work do you want to include?</label>
                 <div class="col-sm-5">
-                  <select class="form-control" style="padding:10px; border:1px solid black;" >
-                    <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                  <select class="form-control"  ng-change = "showSampleFunc(selectNumberSample)"  style="padding:10px; border:1px solid black;" ng-model = "selectNumberSample" ng-options = "x for x in numberSample"  >
                   </select>
+                    
                 </div>
-           </div>
-
-           <p class="text-center" style="font-weight:bold;">Sample work 1</p>
+              </div>
+            </div>
+        
+      <div class="col-sm-5" style = "margin-bottom : 20px;">
+          <button type = "button" class = "btn btn-success" onclick = "location.reload();" ng-show = "showSample" > Reselect Number Of Sample Work</button> 
+      </div>
+      
+    <form class="form-horizontal" ng-show = "showSample" >
+        <div class = col-xs-12>
+      <div ng-repeat = "x in sampleWork | limitTo:selectNumberSample"   style = "border-bottom:1px solid black; margin-bottom:10px;">
+         <p class="text-center" style="font-weight:bold;">Sample Work {{$index + 1}}</p>
             
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" placeholder="MSC Eonomics Essay">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "x.heading">
                 </div>
            </div>
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="title">Title of work</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" placeholder="Economic growth and air pollution in China">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;"  ng-model = "x.title">
                 </div>
            </div>
             <div class="form-group"  >
-               <label class="control-label col-sm-4 input-md" for="authors">Author(s)/Artist/Singer</label>
+               <label class="control-label col-sm-4 input-md" for="authors">Author(s)</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" placeholder="Amanda legum">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "x.author">
                 </div>
            </div>
             <br>
@@ -43,54 +46,75 @@
              <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="pub">Date of publication:</label>
                 <div class="col-sm-5">
-               <input type="date" class="form-control"  style="padding:10px; border:1px solid black;">
+               <input type="date" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "x.date">
                 </div>
            </div>
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="name_of_pub">Name of Publication:<br>Only required for published<br> academic papers</label>
                 <div class="col-sm-5">
-               <input type="text" class="form-control"  style="padding:10px; border:1px solid black;">
+               <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "x.publication">
                 </div>
            </div>
            <div class="form-group"  >
                <label class="control-label col-sm-4" for="description">Description of sample work</label>
                 <div class="col-sm-5">
-                <textarea class="form-control" rows="11"  id="summary" style="padding:10px;border:1px solid black;" placeholder="with the economic development of china, air pollutants are also growing rapidly in recent decades, especially
-in big cities of the country. To understand the relationship between economic condition and air pollutants 
-in big cities, we analysed the socioeconomic indicators such as Gross regional product per capita(GRP per capita), the concentration of air pollutants and the air pollution index(API) from 2003 to 2012 in 31 provincial capitals of mainland china."></textarea>
+                <textarea class="form-control" rows="11"  id="summary" style="padding:10px;border:1px solid black;"  ng-model = "x.description"></textarea>
                 </div>
            </div>
             <div class="form-group">
                <label class="control-label col-sm-4 input-md" for="attach">Attach your sample work</label>
                 <div class="col-sm-4">
-                 <input type="file" class="btn btn-default btn-file">
+                 <input type="file" class="btn btn-default btn-file" ng-model = "x.sampleFile">
                 </div>
            </div>
             <div class="form-group">
                <label class="control-label col-sm-4 input-md" for="URL">Add URL links of your work</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "x.sampleWorkURL" >
                 </div>
            </div>
             <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="attach">Include an Image for this section</label>
+               <label class="control-label col-sm-4 input-md" for="attach"  >Include an Image for this section</label>
                 <div class="col-sm-4">
-                 <input type="file" class="btn btn-default btn-file">
+                 <input type="file" class="btn btn-default btn-file" ng-model = "x.image">
                 </div>
            </div>
             <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="name_button">Name of button </label>
+               <label class="control-label col-sm-4 input-md" for="name_button" >Name of button </label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" placeholder="Download the paper">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;"  ng-model = "x.button">
                 </div>
            </div>
+         </div>
               <div class = "form-group">
 	   <div class="col-xs-12">
 	         <button type = "submit" class="btn btn-danger btn-block borders" id="button1">Save</button>
 	   </div>
 	   </div>
-            </form>
-
+        </div>
+        
+         <!--Keep for testing purposes only 
+        
+        <div class = "col-xs-3" ng-repeat = "x in sampleWork">
+        
+        <p>heading: {{x.heading}} </p>
+        <p>title: {{x.title}} </p>
+        <p>author: {{x.author}} </p>
+        <p>date: {{x.date}} </p>
+        <p>publication: {{x.publication}} </p>
+        <p>description: {{x.description}} </p>
+        <p>sampleFile: {{x.sampleFile}} </p>
+        <p>sampleWorkURL: {{x.sampleWorkURL}} </p>
+        <p>button: {{x.button}} </p>
+        
+        </div>
+  -->
+        
+        
+        
+        
+        
+           </form>
         </div>
 
     </ion-content>

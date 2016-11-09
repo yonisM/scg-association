@@ -65,15 +65,125 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
+    
+    
+    //numberSample
+    $scope.numberSample = ["1","2","3","4","5"];
 
+    //handing the sample work 
+    
+    var sampleWork = [{
+        heading:"",
+        title:"",
+        author:"",
+        date:"",
+        publication:"",
+        description:"",
+        sampleFile:"",
+        sampleWorkURL:"",
+        image:"",
+        button:""
+    }];
+
+    $scope.sampleWork = sampleWork;
+    
+    
+    //hide and show the sample form when option selected from the dropdown. Hide the form by default
+
+    
+    $scope.showSample = false;
+    
+    $scope.showSampleFunc = function(selectNumberSample){
+
+        $scope.showSample = true;
+        
+        
+    //display 5 sample forms
+    for (var i = 0; i < selectNumberSample; i++ ){
+        sampleWork.push({
+        heading:"",
+        title:"",
+        author:"",
+        date:"",
+        publication:"",
+        description:"",
+        sampleFile:"",
+        sampleWorkURL:"",
+        image:"",
+        button:""
+    });
+    }
+};
+        
 
 }])
    
-.controller('step6AddAdditionalExperienceCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('step6AddAdditionalExperienceCtrl', ['$scope', '$stateParams','$timeout', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams, $timeout) {
 
+    //Handling additional experience 
+    var additionalXP = {
+        heading:"",
+        summary:"",
+        image:"",
+        button:"",
+        secondpageheading:"",
+        secondpagesubheading:"",
+        Details:Details
+    };
+    
+    $scope.additionalXP = additionalXP; 
+    
+    
+   //Handling Details of Experience 
+    var Details =[{
+        heading:"",
+        summary:"",
+        button:"",
+        image:""
+    }];
+    
+    $scope.Details = Details;
+    
+    //show all Details of experience by default
+    
+    for (var a=0; a<2; a++){
+        Details.push({
+        heading:"",
+        summary:"",
+        button:"",
+        image:""
+         })
+    };
+    
+    //Add more Details of Experience 
+    
+    $scope.addMoreExperience = function(){ 
+    var j = 1;
+    for (var i=0; i<j; i++){
+        Details.push({
+        heading:"",
+        summary:"",
+        button:"",
+        image:""
+         })
+    };
+
+   
+    };
+    
+ //Remove the selected Detail
+    
+    $scope.removeDetail = function(index){
+     Details.splice(index,1);
+       
+    };
+    
+    
+  
+    
 
 }])
 .controller('userCtrl', ['$scope', '$stateParams','Customer','$state','$q','$timeout', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -90,14 +200,14 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
     }
     $scope.signup = signup;   
     
-     /*$scope.register = function() {
+     $scope.register = function() {
       Customer.create(signup)
         .$promise
         .then(function(){
-            $state.go('dashboard.login');
+            $state.go('login');
             location.reload();
         })
-     }; */
+     }; 
 
     
     //Login a user. Test details  
@@ -126,9 +236,7 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
     .$promise
     .then(function() {
     $state.transitionTo('dashboard.login');
-            $timeout(function(){
             location.reload();
-         },3000)
         }); 
     };
     
