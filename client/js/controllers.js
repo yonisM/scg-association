@@ -244,6 +244,8 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout) {
     $scope.currentUser = Customer.getCurrent();
     $scope.isAuthenticated = Customer.isAuthenticated(); 
 
+    //All customer details
+    $scope.AllCustomerDetails = Customer.find();
   
 
 }])

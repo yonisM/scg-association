@@ -96,18 +96,65 @@ angular.module('app.routes', [])
       }
     }
   })
-  .state('login', {
+  
+  .state('notpaid', {
     url: '/login',
-      templateUrl: 'templates/login.html',
-    controller: 'userCtrl'  
+      templateUrl: 'templates/userNotPaid.html', 
   })
+  
   .state('signup', {
     url: '/signup',
     templateUrl: 'templates/signup.html',
     controller: 'userCtrl'
-
   })
 
+  
+  /// from here
+  
+  .state('usernotpaid', {
+    url: '/usernotpaid',
+    templateUrl: 'templates/userNotPaid.html',
+    controller: 'userCtrl'
+  })
+  
+
+  
+  .state('userPaidNotPickedUp', {
+    url: '/userPaidNotPickedUp',
+    templateUrl: 'templates/userPaidNotPickedUp.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  
+  .state('userPaidPickedUp', {
+    url: '/userPaidPickedUp',
+    templateUrl: 'templates/userPaidPickedUp.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userPaidComplete', {
+    url: '/userPaidComplete',
+    templateUrl: 'templates/userPaidComplete.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userLiveList', {
+    url: '/userLiveList',
+    templateUrl: 'templates/userLiveList.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userProfilePage', {
+    url: '/userProfilePage',
+    templateUrl: 'templates/userProfilePage.html',
+    controller: 'userCtrl'
+  })
+  
+  
 $urlRouterProvider.otherwise('/login')
 
   
