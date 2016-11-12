@@ -1,23 +1,229 @@
 
 <ion-view>
 <ion-content>
+ 
    <div class="container">
+       <br>
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Landsome Online Portfolio </a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref="dashboard.signup"><span class="glyphicon glyphicon-user" ></span> Sign Up Here</a></li>
+      <li><a ui-sref="dashboard.login"><span class="glyphicon glyphicon-log-in" ></span> Log into the Portfolio Portal</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+
+  
+   <img src="\images/cl.jpg"  alt="" class="img-responsive center-block">
+   <h3 class="text-center" style="font-weight:bold;">The Online Portfolio Generating Company That Will Actively Manage Your Academic Brand</h3>
+   <p class="text-center">Join the top academics in your field by having a Portfolio site of your own </p>
+   <div class="col-xs-offset-1">
+   <button type = "button" ui-sref="dashboard.signup" class="btn btn-danger borders" id="button1">Let's get started </button>
+   </div>
+   <h3 class="text-center" >Select a template</h3>
+   <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero iste, pariatur fuga! Ad aliquam pariatur, reprehenderit</p>
+  <div class="row">
+   <div class="col-md-12" > 
+	      <div class="col-xs-12 col-sm-6"  ng-repeat = "x in theme|orderBy:'themeNumber'">
+             <label class = "radio-inline" > <h4 class="text-center"><input type = "radio" name = "themeSelection" ng-model = "themeSelected" value = "{{x.themeNumber}}" ng-click = "{color:'red'}">Theme {{x.themeNumber}}</h4>
+                 <img src="{{x.image}}"  width = "400px"  height = "15px" id ="themeImage"  alt="" class="img-responsive center-block"> 
+                </label>
+            <a href="{{x.hyperlink}}"> Preview This Theme</a>
+	      </div>
+	       </div>
+    </div>
+        
+<div class="col-xs-12 text-center" style="background-color:#b4b6ba; border-top:1px solid black; border-bottom:1px solid black; margin-bottom:10px;">
+    <h2 class="" style="font-weight:bold; margin-top:10px;">Be Among Thousands of Top Academics by Having an Online Presence</h2>
+    <p class="">
+        You must of heard of the phrase, <strong>"It doesn‘t matter what you know, but who you know" </strong> or <br>
+the saying <strong>“If a tree falls in a forest and no one is around to hear it. does It make a
+        sound?"</strong></p>
+
+<p>Landsome Online Portfolio will help you every step of the way by using modern online
+marketing <br>strategies to create and improve your academic brand. The conventional method of
+writing <br>academic journals and contributing to books is a great way to establish authority in your
+field. <br>What good is it if no one will hear about your work or recognise you as an authority figure?</p>
+<p>Landsome Online Portfolio is not your ordinary Portfolio and Resume/CV generator. We do not<br>
+simply just create these incredible online portfolios and then just leave you to it. <br>We are much,
+much more than that! With great backing from Landsome Consultancy. <br>we can help you create
+a lot of online noise so that when the relevant <br>people and organisations are in need of your
+    services, they will be drawn to you.</p>
+<p>Landsome Online Portfolio will help you be known and heard! Sign up today for as little as 	<strong>&euro;5.99 </strong>
+per month.
+
+
+    </p>
+    
+</div>
+    <h2 class="text-center">Services we will provide</h2>
+    
+    <div class="col-sm-12 clearfix" style="margin-bottom:5px;" >
+    
+    <div class="col-xs-2 col-sm-2 "></div>
+  
+     <div class="col-xs-12 col-sm-4   text-center" style="border:1px solid #b4b6ba; padding-bottom:66px;">
        
-  <p> Landsome Online Portfolio Home Page</p>
-       <p><i class="material-icons" style ="color:gold;">mode_edit</i></p>
-       <p><i class="material-icons">search</i></p>
-       <p><i class="material-icons">phone_in_talk</i></p>
-       <p><span class="glyphicon glyphicon-sunglasses"></span></p>
-       <p><i class="material-icons">laptop</i></p>
-       <p><i class="material-icons">security</i></p>
-       <i class="material-icons" style ="color:gold;">star_rate</i>
-       <p><i class="icon-facebook"></i></p>
-       <p><strong>&#169;</strong> 2016 Landsome Online Portfolio </p>
-       <p><a href="#" class="btn-social btn-outline" style = "color:blue;"><i class="fa fa-fw fa-facebook"></i></a> </p>
-       <p><a href="#" class="btn-social btn-outline" style = "color:purple;"  ><i class="fa fa-fw fa-linkedin"></i></a> </p>
-       <p><a href="#" class="btn-social btn-outline" style = "color:blue;"><i class="fa fa-fw fa-twitter"></i></a> </p>
+        <p><i class="material-icons" style="color:red; font-size:40px;">laptop</i></p>
+        <h3>Create stunning Website</h3>
+        <p>whichever template you choose, be sure it will leave a lasting impression</p>
+      
+     </div>
+     
+     <div class="col-xs-2 col-sm-1"></div>
+      <div class="col-xs-12 col-sm-4  text-center" style="border:1px solid #b4b6ba;  ">
+        <p><i class="material-icons" style="color:green; font-size:40px; ">search</i></p>
+        <h3>Make Your Website google friendly</h3>
+        <p>Employers and Clients alike are constantly in search for the best
+person to get the job. Whether they use Google or other search
+engines. make it easy for them to find you!</p>
+         
+     </div>
+   
+      </div>
+
+      <br>
+     <div class="col-sm-12 clearfix" style="margin-bottom:5px;">
+     
+    <div class="col-xs-2 col-sm-2"></div>
+     <div class="col-xs-12 col-sm-4 text-center" style="border:1px solid #b4b6ba;">
+        <p><i class="material-icons" style="color:gold; font-size:40px;">mode_edit</i></p>
+        <h3>Help from professional CV and portfolio Editors</h3>
+        <p>An in-depth, Objective Professional oonsultation service
+will help us understand your career aims, your past
+achievement and the value you can bring so that we in
+turn can create a bespoke Online Portfolio that pinpoints
+your strengths.</p>
+         
+     </div>
+     <div class="col-xs-2 col-sm-1"></div>
+     
+      <div class="col-xs-12 col-sm-4 text-center" style="border:1px solid #b4b6ba; padding-bottom:25px;">
+        <p><i class="material-icons" style="color:blue; font-size:40px;">security</i></p>
+        <h3>Including Hosting and domain name</h3>
+        <p>We are utilising one of the industry‘s most secure cloud platform to
+host your online portfolio. We will also thrown in free domain
+name for your online portfolio.</p>
+         
+     </div>
+    
+      </div>
+     
+     <div class="col-sm-12 clearfix" style="margin-bottom:5px;">
+    <div class="col-xs-2 col-sm-2"></div>
+     <div class="col-xs-12 col-sm-4 text-center" style="border:1px solid #b4b6ba; padding-bottom:40px;">
+         <p><span class="glyphicon glyphicon-sunglasses" style="color:#6d5a07; font-size:50px;"></span></p>
+        <h3>Analyse Your visitors</h3>
+        <p>Are people actually visiting Online Portfolio Site? If you have
+subscribed to our servhe. of course they will. Check out the
+weekly report we send you and see for yourself!</p>
+         
+     </div>
+     <div class="col-xs-2 col-sm-1"></div>
+      <div class="col-xs-12 col-sm-4 text-center" style="border:1px solid #b4b6ba;">
+        <p><i class="material-icons" style="color:#377def; font-size:50px;">phone_in_talk</i></p>
+        <h3>Dedicated support</h3>
+        <p>Many people that works in academics are define success
+differently. That is why we have centred our services around
+how you deﬁne success and the goals you would like to
+edieve. If there is any help you need from us, get in touch and
+we will help you - no question asked.</p>
+
+     
+         
+     </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 clearfix" style="background-color:#b4b6ba; margin-top:5px;">
+      <h2 class="text-center">Testimonials</h2>
+      <div class="col-xs-1 col-sm-1"></div>
+       <div class="col-xs-12 col-sm-3 text-center" style="border:1px solid black; background-color:white; margin-bottom:5px;">
+           
+           <img src="http://placehold.it/250x100" alt="" class="img-responsive center-block" style=" margin-top:5px;">
+           <h4>Yonis Mohamed</h4>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit culpa eum rerum perferendis temporibus itaque, officia commodi laborum dolorum quibusdam ipsa quisquam, dolore odio quo, voluptatibus aut, inventore architecto in.</p>
+            <p class="pull-left">Rating</p> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>  <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>
+       </div>
+        <div class="col-xs-1 col-sm-1"></div>
+       <div class="col-xs-12 col-sm-3 text-center" style="border:1px solid black; background-color:white; margin-bottom:5px;">
+           
+           <img src="http://placehold.it/250x100" alt="" class="img-responsive center-block" style=" margin-top:5px;">
+           <h4>Yonis Mohamed</h4>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit culpa eum rerum perferendis temporibus itaque, officia commodi laborum dolorum quibusdam ipsa quisquam, dolore odio quo, voluptatibus aut, inventore architecto in.</p>
+            <p class="pull-left">Rating</p> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>  <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>
+       </div>
+        <div class="col-xs-1 col-sm-1"></div>
+       <div class="col-xs-12 col-sm-3 text-center" style="border:1px solid black; background-color:white; margin-bottom:5px;">
+           
+           <img src="http://placehold.it/250x100" alt="" class="img-responsive center-block" style=" margin-top:5px;">
+           <h4>Yonis Mohamed</h4>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit culpa eum rerum perferendis temporibus itaque, officia commodi laborum dolorum quibusdam ipsa quisquam, dolore odio quo, voluptatibus aut, inventore architecto in.</p>
+            <p class="pull-left">Rating</p> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i> <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>  <i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i><i class="material-icons col-xs-1" style ="color:gold;">star_rate</i>
+       </div>
+        
+       </div>
+       <div  >
+       <form  name="feedback" class="form-horizontal clearfix" >
+          <h3 class="text-center" style="margin-top:10px;"> Have A Question For Us</h3>
+           <p class="text-center">Are you interest in what we have to offer but are to sure if we offer the right product for you?<br> Leave your details with us and we will gladly arrange a suitable time to have a quick chat with you via email or over the phone.</p>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >Fullname</label>
+                <div class="col-sm-4">
+                <input type="text"   class="form-control" name="fullname" ng-model="feedbackform.fullname" id="allInputFieldsStyling" required>
+                <p ng-show="feedback.fullname.$error.required && feedback.fullname.$dirty " style="color:maroon "> Please Enter your full name </p>
+                </div>
+           </div>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" >Email Address</label>
+                <div class="col-sm-4">
+                <input type="email"   class="form-control" name="email" ng-model="feedbackform.email" id="allInputFieldsStyling" required>
+                 <p ng-show="feedback.email.$error.required && !feedback.email.$pristine " style="color:maroon "> Please Enter your Email address </p>
+                   <p ng-show="feedback.email.$invalid && feedback.email.$dirty " style="color:maroon "> Please Enter a valid Email address </p>
+                </div>
+           </div>
+         <div class="form-group">
+            
+               <label class="control-label col-sm-4 input-md" >Subject Line</label>
+                 <div class="col-sm-4">
+                <input type="text"  class="form-control" name="subject" ng-model="feedbackform.subject" id="allInputFieldsStyling" required>
+                 <p ng-show="feedback.subject.$error.required && feedback.subject.$dirty " style="color:maroon "> Please Type In a Subject Line </p>
+                </div>
+           
+           </div>
+            <div class="form-group">
+            
+               <label class="control-label col-sm-4 input-md" >Message</label>
+                 <div class="col-sm-4">
+                <textarea class="form-control" rows="6"   name="msg"  ng-model="feedbackform.msg" style="padding:10px;border:1px solid black;"></textarea>
+                <p ng-show="feedback.msg.$error.required && feedback.msg.$dirty " style="color:maroon "> Please Type In a Subject Line </p>
+                
+                </div>
+           
+           </div>
+           
+         <div class="form-group">
+         <div class="col-sm-4"></div>
+	   <div class="col-sm-4">
+           <button type = "submit"  ng-disabled="feedback.$invalid" class="btn btn-danger btn-block borders"> Submit </button>
+	   </div>
+	   </div>
+  
+       </form>
+       </div>
+     
+        <div class="col-xs-12 text-center " style="background-color:#b4b6ba; margin-top: 10px;  margin-bottom:5px; ">
+<!--       <p><i class="icon-facebook"></i></p>-->
+      
+       <h3><strong>&#169;</strong> 2016 Landsome Online Portfolio </h3>
        
-       
+       <a href="#" class="btn-social btn-outline" style = "color:blue; font-size:25px;" ><i class="fa fa-fw fa-facebook"></i></a> &emsp;&emsp;
+       <a href="#" class="btn-social btn-outline" style = "color:purple;font-size:25px;"  ><i class="fa fa-fw fa-linkedin"></i></a> &emsp;&emsp;
+       <a href="#" class="btn-social btn-outline" style = "color:blue;font-size:25px;" ><i class="fa fa-fw fa-twitter "></i></a> 
+       </div>
        
     
 	</div>
