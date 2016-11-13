@@ -1,10 +1,32 @@
-<ion-view title="Log in" id="page 7" style="background-color:default;">
-    <ion-content padding="true" class="has-header">
-   <div class="container">
-       <div class="alert alert-success" ng-show = "isAuthenticated">
-           <p><strong>Successfully logged out!</strong>  See you again soon!.</p>
-       </div>
+<ion-view >
+    <ion-content>
         
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">Landsome Online Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+  
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+        
+        
+        
+   <div class="container">
+
          <form  class="form-horizontal" ng-submit = "loginUser()">
           <h3 class="text-center"> Welcome to Landsome portfolio</h3>
             <div class="form-group">
@@ -28,7 +50,7 @@
            <button type = "submit"  class="btn btn-success btn-block borders"> Log in </button>
 	   </div>
 	   </div>
-	   <p class="text-center"><a ui-sref="dashboard.signup">Or create an account</a></p>
+	   <p class="text-center"><a ui-sref="signup">Or create an account</a></p>
   
        </form>
        

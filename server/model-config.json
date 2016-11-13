@@ -61,5 +61,17 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "sampleWork": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "additionalXP": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

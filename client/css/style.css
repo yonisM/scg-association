@@ -34,13 +34,39 @@
     cursor: pointer;
 }
 
+#addMoreExperience{
+    background-color:white;
+    border:1px solid white;
+    font-size:15px;
+    margin-left:40%;
+}
+
+#removeExperience{
+    margin-left:60%;
+    background-color:white;
+    border:1px solid white;
+    color:red;
+}
+
+
+
+
+#divider{
+    border:1px solid black;
+}
+
+#step6title{
+    margin-left: 40%;
+    margin-bottom: 15px;
+}
+
 
 
 
 @media (min-width: 320px) {
     #button1 {
         margin-top:20px;
-        margin-bottom:20px; 
+        margin-bottom:40px; 
         width:100%;
         }
     
@@ -48,6 +74,16 @@
         margin-bottom:20px;
         margin-left:20px;
     }
+    
+       #addMoreExperience{
+    margin-left:10%;
+}
+    
+       #step6title{
+    margin-left: 5%;
+    margin-bottom: 15px;
+}
+    
 }
 
 
@@ -55,8 +91,19 @@
     #button1 {
         width:60%;
         margin-left:20%;
-        margin-top:30px;
+        margin-top:20px;
         }
+    
+    #addMoreExperience{
+    margin-left:35%;
+}
+    
+    #step6title{
+    margin-left: 35%;
+    margin-bottom: 15px;
+}
+    
+    
 }
 
 @media (min-width: 992px) {
@@ -65,5 +112,14 @@
         width:30%;
         margin-left:30%;
         }
+    
+       #addMoreExperience{
+    margin-left:40%;
+}
+    #step6title{
+    margin-left: 40%;
+    margin-bottom: 15px;
+}
+  
 }
 

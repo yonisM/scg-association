@@ -10,8 +10,15 @@ angular.module('app.routes', [])
     
    .state('home', {
     url: '/home',
-    templateUrl: 'templates/home.html'
+    templateUrl: 'templates/home.html',
+    controller:'step1SelectAThemeCtrl'
   })
+  
+    .state('checkout', {
+    url: '/checkout',
+    templateUrl: 'templates/checkout.html'
+  })
+  
       .state('dashboard.step1SelectATheme', {
     url: '/theme',
     views: {
@@ -90,26 +97,67 @@ angular.module('app.routes', [])
       }
     }
   })
-  .state('dashboard.login', {
+  
+  .state('login', {
     url: '/login',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/login.html',
-        controller: 'userCtrl'
-      }
-    }
+      templateUrl: 'templates/login.html', 
+      controller: 'userCtrl'
   })
-  .state('dashboard.signup', {
+  
+  .state('signup', {
     url: '/signup',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/signup.html',
-        controller: 'userCtrl'
-      }
-    }
+    templateUrl: 'templates/signup.html',
+    controller: 'userCtrl'
   })
 
-$urlRouterProvider.otherwise('/dashboard/login')
+  
+  /// from here
+  
+  .state('usernotpaid', {
+    url: '/usernotpaid',
+    templateUrl: 'templates/userNotPaid.html',
+    controller: 'userCtrl'
+  })
+  
+
+  
+  .state('userPaidNotPickedUp', {
+    url: '/userPaidNotPickedUp',
+    templateUrl: 'templates/userPaidNotPickedUp.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  
+  .state('userPaidPickedUp', {
+    url: '/userPaidPickedUp',
+    templateUrl: 'templates/userPaidPickedUp.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userPaidComplete', {
+    url: '/userPaidComplete',
+    templateUrl: 'templates/userPaidComplete.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userLiveList', {
+    url: '/userLiveList',
+    templateUrl: 'templates/userLiveList.html',
+    controller: 'userCtrl'
+  })
+  
+  
+  .state('userProfilePage', {
+    url: '/userProfilePage',
+    templateUrl: 'templates/userProfilePage.html',
+    controller: 'userCtrl'
+  })
+  
+  
+$urlRouterProvider.otherwise('/home')
 
   
 
