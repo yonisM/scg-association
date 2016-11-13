@@ -97,9 +97,9 @@ angular.module('app.routes', [])
     }
   })
   
-  .state('notpaid', {
+  .state('login', {
     url: '/login',
-      templateUrl: 'templates/userNotPaid.html', 
+      templateUrl: 'templates/login.html', 
   })
   
   .state('signup', {
