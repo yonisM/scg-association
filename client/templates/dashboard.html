@@ -21,7 +21,7 @@
                 <ion-item class="positive" id="dashboard-list-item" ui-sref="dashboard.step6AddAdditionalExperience" menu-close="" ng-show = "isAuthenticated">Step 6: Additional Experience</ion-item>
                
                  <a href="" class="btn btn-danger btn-block borders" target="_blank" role="button" ng-show = "isAuthenticated"  >Preview My Theme</a>
-                <button type = "button" class="btn btn-success btn-block borders"  menu-close="" ng-show = "isAuthenticated"> Ready to checkout </button>
+                <a ui-sref = "checkout" type = "button" class="btn btn-success btn-block borders"  menu-close="" ng-show = "isAuthenticated"> Ready to checkout </a>
                 
                  <button type = "button" class="btn btn-primary btn-block borders" ui-sref="login" 
                  ng-click ="logoutUser()" menu-close="" ng-show = "isAuthenticated"> Log out</button>
