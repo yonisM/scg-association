@@ -101,6 +101,7 @@ angular.module('app.routes', [])
   .state('login', {
     url: '/login',
       templateUrl: 'templates/login.html', 
+      controller: 'userCtrl'
   })
   
   .state('signup', {

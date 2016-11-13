@@ -5,33 +5,33 @@
        
   <h2 class="text-center"><u>Personal Details</u></h2>
      <div class ="row row-content">
-<div class = "col-xs-offset-2 ">
-     <img src="http://placehold.it/200x200" alt="" class="pull-left img-responsive center-block" style="margin-right:25px;">
-</div>
-<div class = "col-xs-7 ">
+
+<div class = "col-xs-10 col-xs-offset-2">
+<img src="http://placehold.it/200x200" alt="" class=" img-responsive center-block pull-left" style="margin-right:25px;">
 <p>First Name: <strong>Yonis</strong></p>
           <p>Last Name: <strong>Mohamoud</strong></p>
           <p>Email Address: <strong>Yonis.mohamoud@live.co.uk</strong></p>
           <p>Phone Number: <strong>123456</strong></p>
           <p>LinkedIn link: <a href="http://linkedin.com/in/yonis-mohamoud"><strong>http://linkedin.com/in/yonis-mohamoud</strong></a></p>
           <p>My Resume/CV: <a href=""><strong>YonisMohamoudCV.pdf</strong></a></p>
-         <button type="button"  class = "btn btn-danger btn-block borders col-sm-4 col-sm-pull-3 " ui-sref="dashboard.step2AddPersonalDetails"      id="button1">Edit My Details </button>
+         <button type="button"  class = "btn btn-danger btn-block borders" ui-sref="dashboard.step2AddPersonalDetails"      id="button1">Edit My Details </button>
+    
       
 </div>
        
        </div>
       <hr style="border-top:1px solid black;">
-         <h2 class="text-center"><u>Manage My subscription</u></h2>
+         <h3 class="text-center"><u>Manage My Subscription</u></h3>
          <h4 class="text-center" style="color:red;">*Note* Only Paying Customers Can Manage Their Subscription
 </h4>          
        <p class="text-center"> <a href = "https://Landsome-test.chargebeeportal.com"  class = "btn btn-danger  borders"  d="button1" > Manage My Subscription </a></p>
        <hr style="border-top:1px solid black;">
        <h2 class="text-center"><u>How did we do? Leave a Review</u></h2>
-       <form  class="form-horizontal" name="review">
+       <form  class="form-horizontal" name="review" novalidate>
 
         <div class="form-group"  >
                <label class="control-label col-sm-4" >Ratings: </label>
-               <div class="col-sm-8">
+               <div class="col-sm-6">
                <label class="radio-inline"><input type="radio" name="ratings">1 star</label>
                 <label class="radio-inline"><input type="radio" name="ratings">2 star</label>
                 <label class="radio-inline"><input type="radio" name="ratings">3 star</label>
@@ -39,19 +39,21 @@
                   <label class="radio-inline"><input type="radio" name="ratings" checked>5 star</label>
                 </div>
            </div>
+           
+                      
            <div class="form-group">
             
                <label class="control-label col-sm-4 input-md" >Message</label>
                  <div class="col-sm-4">
-                <textarea class="form-control" rows="6"   ng-maxlength="100" name="comment"  ng-model="comment" style="padding:10px;border:1px solid black;"></textarea>
-                 <p ng-show="review.comment.$invalid " style="color:maroon "> A maximum of 100 characters!</p>
-                  <p ng-show="review.comment.$error.required && review.comment.$dirty " style="color:maroon "> Please Enter your full name </p>
+                <textarea class="form-control" rows="6"  ng-maxlength="100" name="comment"  ng-model="comment" style="padding:10px;border:1px solid black;" required></textarea>
+                 <p ng-show="review.comment.$invalid && review.comment.$dirty " style="color:maroon " required> Maximum of 100 characters!</p>
+                  <p ng-show="review.comment.$error.required && review.comment.$dirty" style="color:maroon "> Please Enter Your Message </p>
                </div>
            </div>
            <div class="form-group">
          <div class="col-sm-4"></div>
 	   <div class="col-sm-4">
-           <button type = "submit"  ng-disabled="review.$valid" class="btn btn-danger btn-block borders"> Submit My review </button>
+           <button type = "submit"  ng-disabled="review.$invalid" class="btn btn-danger btn-block borders"> Submit My review </button>
 	   </div>
 	   </div>
        </form>
