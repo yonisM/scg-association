@@ -13,9 +13,6 @@
     "author": {
       "type": "string"
     },
-    "date": {
-      "type": "string"
-    },
     "publication": {
       "type": "string"
     },
@@ -36,10 +33,29 @@
     },
     "image": {
       "type": "object"
+    },
+    "showSaveButton": {
+      "type": "boolean"
+    },
+    "date": {
+      "type": "date"
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

@@ -15,19 +15,11 @@
     }
   },
   "properties": {
-    "id": {
-      "type": "String",
-      "id": true,
-      "length": 20,
-      "oracle": {
-        "columnName": "ID",
-        "dataType": "VARCHAR2",
-        "dataLength": 20,
-        "nullable": "N"
-      }
+    "password": {
+      "type": "string"
     },
     "email": {
-      "type": "String",
+      "type": "string",
       "length": 40,
       "oracle": {
         "columnName": "NAME",
@@ -36,8 +28,16 @@
         "nullable": "Y"
       }
     },
-    "password": {
-      "type": "string"
+    "id": {
+      "type": "string",
+      "id": true,
+      "length": 20,
+      "oracle": {
+        "columnName": "ID",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "N"
+      }
     }
   },
   "validations": [],
@@ -48,9 +48,9 @@
       "foreignKey": ""
     },
     "personalDetails": {
-      "type": "hasMany",
+      "type": "hasOne",
       "model": "personalDetails",
-      "foreignKey": ""
+      "foreignKey": "CustomerToPersonal"
     },
     "summaries": {
       "type": "hasOne",
@@ -61,8 +61,47 @@
       "type": "hasOne",
       "model": "additionalInformation",
       "foreignKey": ""
+    },
+    "resumes": {
+      "type": "hasOne",
+      "model": "resume",
+      "foreignKey": ""
+    },
+    "themeSelections": {
+      "type": "hasOne",
+      "model": "themeSelection",
+      "foreignKey": ""
+    },
+    "sampleWorks": {
+      "type": "hasMany",
+      "model": "sampleWork",
+      "foreignKey": ""
+    },
+    "additionalXPs": {
+      "type": "hasMany",
+      "model": "additionalXP",
+      "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

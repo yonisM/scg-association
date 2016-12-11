@@ -1,0 +1,40 @@
+<!-- Page Content -->
+    <div class="container">
+
+      
+      <div class = "row"> 
+            <div class="col-sm-12 text-center">
+                <h1>Welcome Yonis Mohamoud<br>
+                    <a href = "#/theme1" target ="_blank" class = "btn btn-success btn-lg"  style = "margin-top: 20px;" ng-show= "true"> View My Selected Theme </a>
+                </h1>
+            </div>
+          </div>
+       
+    
+        
+          <!--
+                    Status of dashboard tiles
+            <p ng-show = "!true" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Section is NOT Complete! </p>
+            <p ng-show = "true" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Section has been completed!  </p> -->
+        
+   
+         
+        <div class="card card-block col-xs-12 col-sm-5 portfolio-item text-center" ng-repeat = "x in dashboardTiles" >
+             <a ui-sref="{{x.link}}" style = "color:black;"><h4 class="card-title">{{x.heading}} </h4>
+            <p class="card-text"><span class="{{x.glyphicon}}" style = "font-size:xx-large;" ></span></p>
+          <!-- Status Goes here    -->
+           <span style = "color:#337ab7;">{{x.nameOfLink}}</span></a>
+         </div>
+   
+        
+    
+
+        <div class = "row">
+            <a ui-sref = "checkout" class = "btn btn-danger btn-lg" id = "button1"> <span class="glyphicon glyphicon-shopping-cart"></span> Checkout </a>
+       </div>
+
+    
+
+
+
+    

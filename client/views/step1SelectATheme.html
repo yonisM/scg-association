@@ -1,0 +1,45 @@
+<section ng-init = "getThemeDetails()">
+    <div class="container" ng-init = "hasThemeSelectedFunc()">
+       <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 1 of 6</span></p>
+    
+        <div class = "visible-xs" id="mobileInfo"> Scroll down to the bottom of the page to save your Theme selection</div>
+        <form>
+            
+           
+ 
+        <div class="row">
+       <div class="col-md-12" > 
+	      <div class="col-xs-12 col-sm-6 col-md-3"  ng-repeat = "x in theme|orderBy:'themeNumber'">
+             
+             <label class = "radio-inline" > <h4 class="text-center"><input type = "radio" name = "themeSelection" 
+                ng-model = "selectedTheme.selectedTheme" ng-value = "{{x.themeNumber}}">Theme {{x.themeNumber}}</h4>
+                 <img src="{{x.image}}"  width = "400px"  height = "20px" id ="themeImage"  alt="" class="img-responsive center-block"> 
+                </label>
+            <a href="{{x.hyperlink}}" target = "_blank"> Preview This Theme</a>
+	      </div>
+	       </div>
+        </div>
+        
+            
+    
+	   <div class = "form-group">
+	           <div class="col-xs-12" ng-show = "!hasThemeSelected">
+	               <button type = "button" class="btn btn-danger btn-block borders" ng-click = "saveTheme(selectedTheme)" id="button1">Save</button>
+                </div>
+           
+        <div class="col-xs-12" ng-show = "hasThemeSelected" >
+           <button type = "submit" class="btn btn-success btn-block borders" id = "button1" ng-click = "updateTheme(selectedTheme)"> Edit </button>
+	   </div> 
+           
+           
+	   </div>
+        
+        
+            
+            
+            
+            
+        </form>
+  
+</div> 
+</section>
