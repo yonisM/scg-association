@@ -3,34 +3,6 @@
     "name": "db",
     "connector": "memory"
   },
-  "geo": {
-    "name": "geo",
-    "connector": "rest",
-    "operations": [
-      {
-        "template": {
-          "method": "GET",
-          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
-          "headers": {
-            "accepts": "application/json",
-            "content-type": "application/json"
-          },
-          "query": {
-            "address": "{street},{city},{zipcode}",
-            "sensor": "{sensor=false}"
-          },
-          "responsePath": "$.results[0].geometry.location"
-        },
-        "functions": {
-          "geocode": [
-            "street",
-            "city",
-            "zipcode"
-          ]
-        }
-      }
-    ]
-  },
   "landsome": {
     "host": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix.cloudant.com",
     "port": 443,
@@ -40,5 +12,19 @@
     "name": "landsome",
     "connector": "cloudant",
     "user": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix"
+  },
+  "Credentials-1": {
+    "url": "https://identity.open.softlayer.com",
+    "password": "D=4/zr0!}a(X0tHC",
+    "name": "Credentials-1",
+    "user": "admin_d3071d915888085e85f1cb991513e4ba7ba9bd42",
+    "connector": "",
+    "project": "object_storage_bb582816_77be_4ac7_baa3_a8f51cb457c3",
+    "projectId": "5a27668ffb69407a8c79f4068c13f133",
+    "region": "dallas",
+    "userId": "8f1d524e814d42278cc3c9a01490a83d",
+    "domainId": "436b3c921e134b0c968eee5f826a3781",
+    "domainName": "1158501",
+    "role": "admin"
   }
 }

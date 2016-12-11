@@ -1,5 +1,5 @@
 {
-  "name": "theme",
+  "name": "themeSelection",
   "base": "PersistedModel",
   "strict": false,
   "idInjection": false,
@@ -7,17 +7,8 @@
     "validateUpsert": true
   },
   "properties": {
-    "image": {
+    "selectedTheme": {
       "type": "string"
-    },
-    "hyperlink": {
-      "type": "string"
-    },
-    "themeNumber": {
-      "type": "string"
-    },
-    "showSaveButton": {
-      "type": "boolean"
     }
   },
   "validations": [],
@@ -28,13 +19,6 @@
       "foreignKey": ""
     }
   },
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

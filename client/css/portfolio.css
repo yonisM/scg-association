@@ -1,0 +1,366 @@
+.fa-home,
+i {
+    color: #000
+}
+#main,
+#photo,
+.featurette {
+    overflow: hidden
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    font-size: 13px
+}
+.backButton {
+    color: #000;
+    position: absolute;
+    top: 5px
+}
+i {
+    font-size: 100%.
+}
+.navbar-inverse .navbar-collapse {
+    margin-left: 270px
+}
+.navbar-inverse .navbar-nav li {
+    margin-left: 30px
+}
+#credit,
+#credit a {
+    color: #999
+}
+.header-image {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: grey;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover
+}
+.headline {
+    padding: 120px 0;
+    background-image: url(http://az616578.vo.msecnd.net/files/2016/03/27/635946751428308757-759031149_classroom.jpg)
+}
+.headline h1 {
+    font-size: 130px;
+    background: rgba(255, 255, 255, .9)
+}
+.headline h2 {
+    font-size: 77px;
+    background: #fff;
+    background: rgba(255, 255, 255, .9)
+}
+.headline h3 {
+    font-size: 42px;
+    background: #fff;
+    background: rgba(255, 255, 255, .9)
+}
+.featurette-divider {
+    margin: 50px 0
+}
+.featurette-image.pull-left {
+    margin-right: 40px
+}
+.featurette-image.pull-right {
+    margin-left: 40px
+}
+.featurette-heading {
+    font-size: 50px
+}
+.list-inline {
+    margin-left: 25%
+}
+.list-inline li {
+    margin-left: 50px
+}
+#footer p {
+    margin-left: 35%
+}
+#footer {
+    margin-top: 50px;
+    background-color: gray;
+    border-color: #080808;
+    padding: 25px
+}
+@media(max-width:1200px) {
+    .headline h1 {
+        font-size: 140px
+    }
+    .headline h2 {
+        font-size: 63px
+    }
+    .featurette-divider {
+        margin: 50px 0
+    }
+    .featurette-image.pull-left {
+        margin-right: 20px
+    }
+    .featurette-image.pull-right {
+        margin-left: 20px
+    }
+    .featurette-heading {
+        font-size: 35px
+    }
+    .list-inline {
+        margin-left: 25%
+    }
+    .list-inline li {
+        margin-left: 50px
+    }
+    #footer p {
+        margin-left: 35%
+    }
+    .navbar-inverse .navbar-collapse {
+        margin-left: 120px
+    }
+    .navbar-inverse .navbar-nav li {
+        margin-left: 25px
+    }
+}
+@media(max-width:991px) {
+    .headline h1 {
+        font-size: 105px
+    }
+    .headline h2 {
+        font-size: 50px
+    }
+    .featurette-divider {
+        margin: 40px 0
+    }
+    .featurette-image {
+        max-width: 50%
+    }
+    .featurette-image.pull-left {
+        margin-right: 10px
+    }
+    .featurette-image.pull-right {
+        margin-left: 10px
+    }
+    .featurette-heading {
+        font-size: 30px
+    }
+    #footer p {
+        margin-left: 40%
+    }
+    .navbar-inverse .navbar-collapse {
+        margin-left: 40px
+    }
+    .navbar-inverse .navbar-nav li {
+        margin-left: 2px
+    }
+}
+@media(max-width:768px) {
+    .featurette-divider {
+        margin: 40px 0
+    }
+    .featurette-heading {
+        font-size: 25px
+    }
+    .list-inline {
+        margin-left: 15%
+    }
+    .list-inline li {
+        margin-left: 10%
+    }
+    .navbar-inverse .navbar-collapse {
+        margin-left: 15px
+    }
+    .navbar-inverse .navbar-nav li {
+        margin-left: 0
+    }
+}
+@media(max-width:668px) {
+    .headline h1 {
+        font-size: 70px
+    }
+    .headline h2 {
+        font-size: 32px
+    }
+    .featurette-divider {
+        margin: 30px 0
+    }
+}
+@media(max-width:640px) {
+    .headline {
+        padding: 75px 0 25px
+    }
+    .headline h1 {
+        font-size: 60px
+    }
+    .headline h2 {
+        font-size: 30px
+    }
+}
+@media(max-width:375px) {
+    .featurette-divider {
+        margin: 10px 0
+    }
+    .featurette-image {
+        max-width: 100%
+    }
+    .featurette-image.pull-left {
+        margin-right: 0;
+        margin-bottom: 10px
+    }
+    .featurette-image.pull-right {
+        margin-bottom: 10px;
+        margin-left: 0
+    }
+    .list-inline {
+        margin-left: 15%
+    }
+    .list-inline li {
+        margin-left: 15px
+    }
+    #footer p {
+        margin-left: 25%
+    }
+}
+
+.basic-info label,
+p label {
+    font-family: Oswald, Helvetica, Arial, serif
+}
+h1 {
+    font-size: 300%
+}
+h2 {
+    font-size: 210%
+}
+h3 {
+    font-size: 130%
+}
+p {
+    margin: 0 0 10px
+}
+ul {
+    margin: 0;
+    list-style-type: square
+}
+.rtl {
+    direction: rtl
+}
+.clear {
+    clear: both
+}
+#main {
+    background: #fff;
+    padding: 35px;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 6px #ccc
+}
+#title {
+    line-height: 42px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 30px;
+    margin: 0 0 30px
+}
+#credit {
+    margin-bottom: 20px;
+    font-size: 11px;
+    text-align: center
+}
+p label {
+    font-size: 110%;
+    margin-right: 10px
+}
+p label span.colon {
+    display: inline
+}
+.section {
+    margin-bottom: 40px
+}
+
+.section .title {
+    text-transform: uppercase;
+    font-size: 170%;
+    padding: 10px;
+    margin: 0 auto 15px;
+    display: inline-block;
+    background: #000;
+    color: #fff
+}
+.basic-info p,
+.section .set h3 {
+    margin: 0
+}
+.basic-info {
+    border-top: 0
+}
+.section.basic-info .title {
+    float: left;
+    border: 0
+}
+.basic-info .set {
+    float: right;
+    width: 70%
+}
+.basic-info .address {
+    width: 40%;
+    float: left
+}
+.basic-info .r {
+    float: left;
+    width: 80%;
+    text-align: left
+}
+.basic-info label,
+.basic-info span {
+    display: inline!important
+}
+.section span.value {
+    display: block
+}
+.section h3 span.l,
+.section span.r {
+    width: 49%;
+    float: left
+}
+.section span.r {
+    float: right;
+    text-align: right
+}
+.section-education .school,
+.section-work .job_title {
+    font-size: 100%;
+    display: block;
+    margin: 5px 0
+}
+#download {
+    float: right
+}
+#photo {
+    width: 160px;
+    height: 200px;
+    float: left;
+    margin-top: 4px;
+    border-radius: 4px
+}
+#photo img {
+    width: 100%;
+    height: auto
+}
+.header.photo {
+    margin-left: 190px
+}
+.header.photo #title {
+    text-align: left
+}
+.header.photo .basic-info {
+    float: none;
+    padding: 0
+}
+@media screen and (max-width: 950px) {
+    body {
+        background: #fff
+    }
+    #main {
+        box-shadow: none;
+        padding: 5px
+    }
+}

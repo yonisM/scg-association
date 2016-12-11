@@ -1,0 +1,47 @@
+<section>
+        
+        <div class="container">
+            
+     <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 4 of 6</span></p>
+       
+       <form class="form-horizontal" >
+       
+       <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
+             <input type="checkbox" ng-model="additionalInformation.sectionIncluded" ng-checked = "additionalInformation.sectionIncluded"> Tick to include this section in your Portfolio
+        </div>
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="heading">Field of research</label>
+                <div class="col-sm-5">
+                <input type="text" ng-disabled="!additionalInformation.sectionIncluded" class="form-control" placeholder="Field of research" ng-model = "additionalInformation.fieldOfResearch" style="padding:10px;border:1px solid black;">
+                </div>
+           </div>
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="summary">Summary Section</label>
+                <div class="col-sm-5">
+                <textarea class="form-control" ng-disabled="!additionalInformation.sectionIncluded" rows="6" id="summary" ng-model = "additionalInformation.summarySection" placeholder="Amanda has keen interest Econometrics and developmental economics with particular emphasis on policy decisions made in Malaysia"  style="padding:10px;border:1px solid black;"></textarea>
+                </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="resume">Include an image</label>
+                <div class="col-sm-4">
+                 <input type="file" class="btn btn-default btn-file" ng-model = "additionalInformation.image" ng-disabled="!additionalInformation.sectionIncluded">
+                </div>
+           </div>
+           
+           
+           <div class="form-group" ng-init = "hasCustomerEnteredAdditonalFunc()">
+	   <div class="col-xs-12" ng-show = "!hasCustomerEnteredAdditonal" >
+           <button type = "submit" class="btn btn-danger btn-block borders" id = "button1"  ng-disabled = "!additionalInformation.sectionIncluded"  ng-click = "sendAdditionalInformation()"> Save </button>
+	   </div>
+          
+        <div class="col-xs-12" ng-show = "hasCustomerEnteredAdditonal" >
+           <button type = "submit" class="btn btn-success btn-block borders" id = "button1"  ng-disabled = "!additionalInformation.sectionIncluded"  ng-click = "updateAdditionalInformation()"> Edit </button>
+	   </div> 
+    </div>
+           
+        
+        </form>
+            
+        
+        </div> 
+</section>

@@ -50,6 +50,11 @@
 
 
 
+.capitalise {
+   text-transform: capitalize;
+}
+
+
 
 #divider{
     border:1px solid black;
@@ -58,6 +63,15 @@
 #step6title{
     margin-left: 40%;
     margin-bottom: 15px;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+    margin-right:10px;
+    border: 1px solid black; 
+}
+.portfolio-item:hover {
+    background-color:lightgrey; 
 }
 
 

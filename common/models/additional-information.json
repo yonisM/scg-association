@@ -7,21 +7,31 @@
     "validateUpsert": true
   },
   "properties": {
+    "fieldOfResearch": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
     "sectionIncluded": {
       "type": "string"
     },
     "summarySection": {
       "type": "string"
     },
-    "image": {
-      "type": "string"
-    },
-    "fieldOfResearch": {
-      "type": "string"
+    "showSaveButton": {
+      "type": "boolean"
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

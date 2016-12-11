@@ -23,3 +23,4 @@ app.start = function() {
 if (require.main === module) {
   app.start();
 }
+

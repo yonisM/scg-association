@@ -26,6 +26,7 @@
   },
   "Customer": {
     "dataSource": "landsome",
+    "public": true,
     "$promise": {},
     "$resolved": true
   },
@@ -63,12 +64,18 @@
     "$resolved": true
   },
   "sampleWork": {
-    "dataSource": "db",
+    "dataSource": "landsome",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "additionalXP": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "themeSelection": {
     "dataSource": "landsome",
     "public": true,
     "$promise": {},

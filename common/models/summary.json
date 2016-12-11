@@ -7,13 +7,22 @@
     "validateUpsert": true
   },
   "properties": {
-    "nameOfHeading": {
+    "portfolioHeading": {
       "type": "string"
     },
-    "summarySection": {
+    "portfolioSubHeading": {
       "type": "string"
     },
-    "image": {
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "showSaveButton": {
       "type": "string"
     }
   },
@@ -25,6 +34,13 @@
       "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

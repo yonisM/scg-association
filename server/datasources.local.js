@@ -48,3 +48,17 @@ var config = extend({ connector: connector }, DATASTORES[DB]);
 module.exports = {
   db: config
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
