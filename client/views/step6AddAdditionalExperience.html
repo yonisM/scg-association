@@ -1,8 +1,11 @@
 <section>
         
         <div class="container">
-             <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 6 of 6</span></p>
-             
+        <div class = "row">
+             <a ui-sref = "dashboard" class = "btn btn-link pull-left"><span class ="glyphicon glyphicon-chevron-left"></span>Go to Dashboard </a> 
+        </div>
+             <h2 class = "text-center"><u>Step 6: Additional Experience</u></h2>
+            
             <div class = col-xs-12>
             <form class="form-horizontal" >
              <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
@@ -21,7 +24,7 @@
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="summary">Summary of your experience </label>
                 <div class="col-sm-5">
-                <textarea class="form-control" ng-disabled="!isChecked" rows="13"  id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.summary" ></textarea>
+                <textarea class="form-control" ng-disabled="!isChecked" rows="6"  id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.summary" ></textarea>
                 </div>
               </div>
             
@@ -79,7 +82,7 @@ ng-show = "showHideDetails($index)"
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="summary">Provide Supporting Information </label>
                 <div class="col-sm-5">
-                <textarea class="form-control" ng-disabled="!isChecked" rows="8"  id="allInputFieldsStyling" ng-model ="x.summary" ></textarea>
+                <textarea class="form-control" ng-disabled="!isChecked" rows="6"  id="allInputFieldsStyling" ng-model ="x.summary" ></textarea>
                 </div>
               </div>
                 
@@ -108,7 +111,7 @@ ng-show = "showHideDetails($index)"
             
         </div>
                     <div class = "col-xs-12">
-                    <p ng-show = "$last" ng-if ="Details.length>=3" style = "color:red;font-size:16px;" id = "addMoreExperience" > <i class="material-icons" style = "color:red;"  >warning</i> If you wish to add more details, <a href ="#">please get in touch</a>.</p> 
+                    <p ng-show = "$last" ng-if ="Details.length>=3" style = "color:red;font-size:16px;" id = "addMoreExperience" class = "text-center">If you wish to add more Details or Additional Experiences, <a href ="#">please get in touch</a>.</p> 
                         </div>
         </div>
                 <button type = "button" id = "addMoreExperience" ng-if ="!(Details.length >= 3)" ng-click="addMoreExperience()" ng-disabled="!isChecked"   ><span class="glyphicon glyphicon-plus-sign"></span> Add Details of Experience {{Details.length + 1}} </button>
@@ -117,7 +120,7 @@ ng-show = "showHideDetails($index)"
     
             <div class = "form-group">
 	   <div class="col-xs-12">
-	         <button type = "submit" class="btn btn-danger btn-block borders" ng-disabled="!isChecked" id="button1" ng-click = "sendAdditionalXP()" >Save</button>
+	         <button type = "button" class="btn btn-danger btn-block borders" ng-disabled="!isChecked" id="button1" ng-click = "sendAdditionalXP()" >Save</button>
 	   </div>
 	   </div>
             </form>  

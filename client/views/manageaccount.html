@@ -7,20 +7,19 @@
      <div class ="row row-content">
 <div class = "col-xs-12 col-sm-10 col-sm-offset-2">
 <img src="http://placehold.it/200x200" alt="" class=" img-responsive center-block pull-left" style="margin-right:25px;">
+    
+        
         <div><p>First Name: <strong class = "capitalise"> {{customerDetails.firstName}}</strong></p>
           <p>Last Name: <strong class = "capitalise">{{customerDetails.lastName}}</strong></p>
-          <p>Email Address: <strong>{{customerDetails.email}}</strong></p>
-          <p>Phone Number: <strong>{{customerDetails.phoneNumber}}</strong></p>
+          <p ng-controller = "userCtrl">Email Address: <strong>{{currentUser.email}}</strong></p>
           <p>LinkedIn link: <a href="{{customerDetails.linkedin}}" target = "_blank"><strong>{{customerDetails.linkedin}}</strong></a></p>
-    
-          <p>My Resume/CV: <a href=""><strong>YonisMohamoudCV.pdf</strong></a></p>
         </div>
-         <button type="button"  class = "btn btn-danger btn-block borders" ui-sref="step2AddPersonalDetails"      id="button1">Edit My Details </button>  
+         <button type="button"  class = "btn btn-danger btn-block borders" ui-sref="step2AddPersonalDetails"      id="button1">Edit Personal Details </button>  
 </div>
        
        </div>
       <hr style="border-top:1px solid black;">
-         <h3 class="text-center"><u>Manage My Subscription</u></h3>
+         <h2 class="text-center"><u>Manage My Subscription</u></h2>
          <div class = "text-center" style = "color:red;">Paying Customers can create a separate account on Landsome's Chargebee Portal to perform the following actions:</div>
             
                 <li class = "text-center" style = "color:red;">Cancel Membership</li>

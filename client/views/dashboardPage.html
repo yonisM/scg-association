@@ -2,9 +2,9 @@
     <div class="container">
 
       
-      <div class = "row"> 
+      <div class = "row" > 
             <div class="col-sm-12 text-center">
-                <h1>Welcome Yonis Mohamoud<br>
+                <h1 ng-controller = "userCtrl" class = "capitalise">{{customerDetails.firstName}} {{customerDetails.lastName}} Dashboard<br>
                     <a href = "#/theme1" target ="_blank" class = "btn btn-success btn-lg"  style = "margin-top: 20px;" ng-show= "true"> View My Selected Theme </a>
                 </h1>
             </div>
@@ -18,13 +18,14 @@
             <p ng-show = "true" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Section has been completed!  </p> -->
         
    
-         
+         <div class = "row">
         <div class="card card-block col-xs-12 col-sm-5 portfolio-item text-center" ng-repeat = "x in dashboardTiles" >
              <a ui-sref="{{x.link}}" style = "color:black;"><h4 class="card-title">{{x.heading}} </h4>
             <p class="card-text"><span class="{{x.glyphicon}}" style = "font-size:xx-large;" ></span></p>
-          <!-- Status Goes here    -->
+          <!-- Status dashboard tiles goes here    -->
            <span style = "color:#337ab7;">{{x.nameOfLink}}</span></a>
          </div>
+        </div>
    
         
     

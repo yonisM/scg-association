@@ -1,5 +1,49 @@
 <section>
-  <h1>You are now registered.</h1>
-  <p>Please <a ui-sref="login" ui-sref-active="active">log in</a> to perform
-      more actions.</p>
-</section>
+    
+   <div class="container">
+       
+       
+       <p> We now need you to login with the Email Address you have registered with.</p>
+       
+        <div class = "row">
+            <div class="alert alert-danger col-xs-12 col-sm-8 col-sm-offset-2" ng-if = "loginerror">
+            <strong>Sorry, we don't recognise those details. Please check and try again.</strong>
+            </div>
+       </div>
+
+       
+       <div class = "row">
+         <form  class="form-horizontal" ng-submit = "loginNewUser()">
+          <h2 class="text-center"> Log into your Account</h2>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" style = "font-size:larger;">Email</label>
+                <div class="col-sm-5 col-md-4">
+                <input type="email" ng-model = "login.email"  class="form-control" id="allInputFieldsStyling" required autofocus>
+                </div>
+           </div>
+         <div class="form-group">
+               <label class="control-label col-sm-4 input-md" style = "font-size:larger;" >Password</label>
+                 <div class="col-sm-5 col-md-4">
+                <input type="password" ng-model = "login.password" class="form-control" id="allInputFieldsStyling" required autofocus>
+                </div>
+             
+           </div>
+           
+         <div class="form-group">
+         <div class="col-sm-4"></div>
+	   <div class="col-sm-5 col-md-4">
+           <button type = "submit"  class="btn btn-success btn-block borders"> Log in </button>
+	   </div>
+	   </div>
+	   <p class="text-center"><button type= "button" class = "btn btn-link">Forgotten Password?</button></p>
+  
+       </form>
+     </div>
+       
+          
+	</div>
+      
+      
+      
+ 
+<section>

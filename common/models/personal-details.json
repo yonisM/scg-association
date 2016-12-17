@@ -19,9 +19,6 @@
     "phoneNumber": {
       "type": "string"
     },
-    "linkedin": {
-      "type": "string"
-    },
     "dob": {
       "type": "string"
     },
@@ -36,6 +33,9 @@
     },
     "showSaveButton": {
       "type": "boolean"
+    },
+    "linkedin": {
+      "type": "string"
     }
   },
   "validations": [],

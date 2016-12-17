@@ -1,0 +1,42 @@
+{
+  "name": "sectionSaved",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "personalDetails": {
+      "type": "boolean"
+    },
+    "themes": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "boolean"
+    },
+    "samplework": {
+      "type": "boolean"
+    },
+    "fieldOfResearch": {
+      "type": "boolean"
+    },
+    "additionalExperience": {
+      "type": "boolean"
+    },
+    "goals": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
