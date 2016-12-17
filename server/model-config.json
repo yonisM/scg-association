@@ -80,5 +80,11 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "sectionSaved": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

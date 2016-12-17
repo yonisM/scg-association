@@ -1,28 +1,20 @@
 <section>
   <div class="container">
-        <p style = "font-size:30px;margin-bottom:25px;"><button type = "button" style = "background-color:white;border:1px solid white;"><span class="glyphicon glyphicon-info-sign pull-left" onclick=""></span></button><span class="pull-right" style = "font-size:14px;">Step 5 of 6</span></p>
-             
-            <div class="form-horizontal" ng-show = "!showSample">
-             <div class="form-group"  >
-               <label class="control-label col-sm-5 input-md" for="sample">How many sample work do you want to include?</label>
-                <div class="col-sm-5">
-                  <select class="form-control"  ng-change = "showSampleFunc(selectNumberSample)"  style="padding:10px; border:1px solid black;" ng-model = "selectNumberSample" ng-options = "x for x in numberSample"  >
-                  </select>
+      
+          <div class = "row">
+             <a ui-sref = "dashboard" class = "btn btn-link pull-left"><span class ="glyphicon glyphicon-chevron-left"></span>Go to Dashboard </a>
+         </div>
+          
                     
-                </div>
-              </div>
-            </div>
-        
-      <div class="col-sm-5" style = "margin-bottom : 20px;">
-          <button type = "button" class = "btn btn-success" onclick = "location.reload();" ng-show = "showSample" > Reselect Number Of Sample Work</button> 
-      </div>
-      
-      
-      
-    <form class="form-horizontal" ng-show = "showSample" >
-        <div class = col-xs-12>
-      <div ng-repeat = "x in sampleWork | limitTo:selectNumberSample"   style = "border-bottom:1px solid black; margin-bottom:10px;">
+
+    <form class="form-horizontal">
+        <div class = col-xs-12 >
+      <div ng-repeat = "x in sampleWork | limitTo: 3" style = "border-bottom:1px solid black; margin-bottom:10px;">
          <p class="text-center" style="font-weight:bold;">Sample Work {{$index + 1}}</p>
+          
+          
+          <button type = "button" class= "btn btn-md" ng-click = "removeSample($index)" ng-value = "{{$index+1}}" ng-hide = "$first"  id = "removeExperience"><span class="glyphicon glyphicon-minus-sign"  style="font-size:15px;"></span><span> Remove Sample Work </span> </button>
+          
             
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
@@ -59,7 +51,7 @@
            <div class="form-group"  >
                <label class="control-label col-sm-4" for="description">Description of sample work</label>
                 <div class="col-sm-5">
-                <textarea class="form-control" rows="11"  id="summary" style="padding:10px;border:1px solid black;"  ng-model = "x.description"></textarea>
+                <textarea class="form-control" rows="6"  id="summary" style="padding:10px;border:1px solid black;"  ng-model = "x.description"></textarea>
                 </div>
            </div>
             <div class="form-group">
@@ -86,17 +78,33 @@
                 <input type="text" class="form-control"  style="padding:10px; border:1px solid black;"  ng-model = "x.button">
                 </div>
            </div>
+          
+          <div class = "col-xs-12" ng-show = "$last">
+                    <p  ng-show ="(sampleWork.length >= 3)" style = "color:red;font-size:16px;" id = "addMoreExperience" class = "text-center">If you wish to add more Sample Work <a href ="#"> please get in touch</a>.</p> 
+         </div>
+          
          </div>
             
-        <div class = "form-group"  ng-init = "hasCustomerEnteredSampleFunc()">
-	       <div class="col-xs-12" ng-show = "!hasCustomerEnteredSample"    >
-	         <button type = "submit" class="btn btn-danger btn-block borders" id="button1" ng-click = "sendDetails()">Save</button>
-	       </div>
-	   </div>
             
-        
-        </div>        
+            
+            <button type = "button" id = "addMoreExperience" ng-if ="!(sampleWork.length >= 3)" ng-click="addSampleWork()"><span class="glyphicon glyphicon-plus-sign"></span> Add Sample Work {{sampleWork.length + 1}} </button>
+            
+            
+            
+            
+            
+        <div class = "form-group">
+	       <div class="col-xs-12" ng-show = "showSaveButton" >
+	         <button type = "submit" class="btn btn-danger btn-block borders" id="button1" ng-click = "sendDetails()">Save</button>
+            </div>
+              
+         <div class="col-xs-12" ng-show = "!showSaveButton" >
+	         <button type = "submit" class="btn btn-success btn-block borders" id="button1" ng-click = "updateSample()">Edit</button>
+	       </div> 
+        </div> 
+            
+            </div>
            </form>
-        </div>
-
+        
+    </div>
 </section>

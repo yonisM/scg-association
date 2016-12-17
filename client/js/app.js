@@ -64,6 +64,28 @@ angular
         }
       
       })
+    
+    
+    
+      .state('signupsuccess', {
+        url: '/signupsuccess',
+        views:{
+            'header':{
+                  templateUrl: 'views/header.html',
+              },
+            'content':{
+                  templateUrl: 'views/sign-up-success.html',
+                  controller: 'userCtrl'
+            }
+        }
+      
+      })
+    
+    
+    
+    
+    
+    
      
       .state('theme1', {
     url: '/theme1',
@@ -115,6 +137,9 @@ angular
     .state('step1SelectATheme', {
     url: '/theme',
           views:{
+             'header':{
+                templateUrl: 'views/header.html'
+            },
             'content':{
                 templateUrl: 'views/step1SelectATheme.html',
                 controller: 'step1SelectAThemeCtrl'
@@ -152,6 +177,9 @@ angular
   .state('step3Summary', {
     url: '/summary', 
           views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
             'content':{
                 templateUrl: 'views/step3Summary.html',
                 controller: 'step3SummaryCtrl'
@@ -165,6 +193,9 @@ angular
   .state('step4AdditionalInformationAboutYourself', {
    url: '/additonalinfo',
           views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
             'content':{
                 templateUrl: 'views/step4AdditionalInformationAboutYourself.html',
                 controller: 'step4AdditionalInformationAboutYourselfCtrl'
@@ -177,6 +208,9 @@ angular
   .state('step5AddSampleWorkS', {
     url: '/sampleform',
           views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
             'content':{
                 templateUrl: 'views/step5AddSampleWorkS.html',
                 controller: 'step5AddSampleWorkSCtrl'
@@ -189,6 +223,9 @@ angular
   .state('step6AddAdditionalExperience', {
     url: '/additionalexperience',
           views:{
+             'header':{
+                templateUrl: 'views/header.html'
+            },
             'content':{
                 templateUrl: 'views/step6AddAdditionalExperience.html',
                 controller: 'step6AddAdditionalExperienceCtrl'

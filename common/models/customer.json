@@ -38,6 +38,15 @@
         "dataLength": 20,
         "nullable": "N"
       }
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -81,15 +90,14 @@
       "type": "hasMany",
       "model": "additionalXP",
       "foreignKey": ""
+    },
+    "sectionSaveds": {
+      "type": "hasOne",
+      "model": "sectionSaved",
+      "foreignKey": ""
     }
   },
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    },
     {
       "accessType": "*",
       "principalType": "ROLE",
@@ -97,7 +105,7 @@
       "permission": "ALLOW"
     },
     {
-      "accessType": "*",
+      "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW"
