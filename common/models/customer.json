@@ -82,18 +82,63 @@
       "foreignKey": ""
     },
     "sampleWorks": {
-      "type": "hasMany",
+      "type": "hasOne",
       "model": "sampleWork",
       "foreignKey": ""
     },
     "additionalXPs": {
-      "type": "hasMany",
+      "type": "hasOne",
       "model": "additionalXP",
       "foreignKey": ""
     },
     "sectionSaveds": {
       "type": "hasOne",
       "model": "sectionSaved",
+      "foreignKey": ""
+    },
+    "sampleWork1s": {
+      "type": "hasOne",
+      "model": "sampleWork1",
+      "foreignKey": ""
+    },
+    "sampleWork2s": {
+      "type": "hasOne",
+      "model": "sampleWork2",
+      "foreignKey": ""
+    },
+    "sampleWork3s": {
+      "type": "hasOne",
+      "model": "sampleWork3",
+      "foreignKey": ""
+    },
+    "details1s": {
+      "type": "hasOne",
+      "model": "details1",
+      "foreignKey": ""
+    },
+    "details2s": {
+      "type": "hasOne",
+      "model": "details2",
+      "foreignKey": ""
+    },
+    "details3s": {
+      "type": "hasOne",
+      "model": "details3",
+      "foreignKey": ""
+    },
+    "details4s": {
+      "type": "hasOne",
+      "model": "details4",
+      "foreignKey": ""
+    },
+    "details5s": {
+      "type": "hasOne",
+      "model": "details5",
+      "foreignKey": ""
+    },
+    "details6s": {
+      "type": "hasOne",
+      "model": "details6",
       "foreignKey": ""
     }
   },

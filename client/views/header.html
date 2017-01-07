@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav navbar-right" >
         <li ng-show = "isAuthenticated"><a ui-sref="dashboard"><span class="glyphicon glyphicon-cog"></span> Portfolio Generator Dashboard </a></li>
         <li ng-show = "isAuthenticated"><a ui-sref="myaccount"><span class="glyphicon glyphicon-user"></span> View My Account </a></li>
-        <li ng-show = "!isAuthenticated"><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-show = "!isAuthenticated"><a ng-click = "loginModal()" href><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li ng-show = "!isAuthenticated"><a ui-sref="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li ng-show = "isAuthenticated"><a type = "button" class = "btn btn-link" ng-click = "logoutUser()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
        

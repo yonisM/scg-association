@@ -16,9 +16,6 @@
     "summary": {
       "type": "boolean"
     },
-    "samplework": {
-      "type": "boolean"
-    },
     "fieldOfResearch": {
       "type": "boolean"
     },
@@ -26,6 +23,33 @@
       "type": "boolean"
     },
     "goals": {
+      "type": "boolean"
+    },
+    "details1": {
+      "type": "boolean"
+    },
+    "details2": {
+      "type": "boolean"
+    },
+    "details3": {
+      "type": "boolean"
+    },
+    "details4": {
+      "type": "boolean"
+    },
+    "details5": {
+      "type": "boolean"
+    },
+    "details6": {
+      "type": "boolean"
+    },
+    "samplework1": {
+      "type": "boolean"
+    },
+    "samplework2": {
+      "type": "boolean"
+    },
+    "samplework3": {
       "type": "boolean"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "name": "sampleWork",
+  "name": "sampleWork1",
   "base": "PersistedModel",
   "strict": false,
   "idInjection": false,
@@ -7,38 +7,35 @@
     "validateUpsert": true
   },
   "properties": {
-    "heading": {
-      "type": "string"
-    },
     "author": {
-      "type": "string"
-    },
-    "publication": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "sampleWorkURL": {
       "type": "string"
     },
     "button": {
       "type": "string"
     },
-    "sampleFile": {
-      "type": "object"
+    "date": {
+      "type": "string"
     },
-    "title": {
+    "description": {
+      "type": "string"
+    },
+    "heading": {
       "type": "string"
     },
     "image": {
-      "type": "object"
+      "type": "string"
     },
-    "showSaveButton": {
-      "type": "boolean"
+    "publication": {
+      "type": "string"
     },
-    "date": {
-      "type": "date"
+    "sampleFile": {
+      "type": "string"
+    },
+    "sampleWorkURL": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
     }
   },
   "validations": [],

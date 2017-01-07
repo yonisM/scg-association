@@ -4,12 +4,12 @@
         <div class = "row">
              <a ui-sref = "dashboard" class = "btn btn-link pull-left"><span class ="glyphicon glyphicon-chevron-left"></span>Go to Dashboard </a> 
         </div>
-             <h2 class = "text-center"><u>Step 6: Additional Experience</u></h2>
+             <h2 class = "text-center"><u>Step 5: Additional Experience</u></h2>
             
             <div class = col-xs-12>
             <form class="form-horizontal" >
              <div class="col-sm-12 text-center" style ="margin-bottom:20px;">
-             <input type="checkbox" name= "tick" value = "checked" ng-model="isChecked" ><span> Tick to include this section in your Portfolio</span> </div>
+             <input type="checkbox" name= "tick" ng-model="additionalXP.sectionIncluded" ng-checked = "additionalXP.sectionIncluded"><span> Tick to include this section to your Portfolio Site</span> </div>
             
                 <!-- The section is to handle the details of any Additional Experience user may have. This section will 
                      remain static. 
@@ -18,142 +18,128 @@
                 <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" ng-disabled="!isChecked" ng-model = "additionalXP.heading" placeholder="" id="allInputFieldsStyling">
+                <input type="text" class="form-control" ng-disabled="!additionalXP.sectionIncluded" ng-model = "additionalXP.heading" placeholder="" id="allInputFieldsStyling">
                 </div>
            </div>
               <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="summary">Summary of your experience </label>
                 <div class="col-sm-5">
-                <textarea class="form-control" ng-disabled="!isChecked" rows="6"  id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.summary" ></textarea>
+                <textarea class="form-control" ng-disabled="!additionalXP.sectionIncluded" rows="6"  id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.summary" ></textarea>
                 </div>
               </div>
             
             <div class="form-group">
                <label class="control-label col-sm-4 input-md" for="profile">Include an Image for this section</label>
                 <div class="col-sm-4">
-                 <input type="file" ng-disabled = "!isChecked" class="btn btn-default btn-file" ng-model ="additionalXP.image">
+                 <input type="file" ng-disabled = "!additionalXP.sectionIncluded" class="btn btn-default btn-file" ng-model ="additionalXP.image">
                 </div>
             </div>
                 
             <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="name_button" >Name of button </label>
+               <label class="control-label col-sm-4 input-md" for="name_button" >Name of button
+                   <br>(link to 2nd page) </label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" ng-disabled = "!isChecked" id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.button">
+                <input type="text" class="form-control" ng-disabled = "!additionalXP.sectionIncluded" id="allInputFieldsStyling" placeholder="" ng-model ="additionalXP.button">
                 </div>
            </div>
-                <hr id = "divider"> 
+                
+                
+                 <h3 class = "text-center" style = "margin-bottom:40px;margin-top:30px; color:red"> The information you fill in below will appear on the 2nd page of your Portfolio Page</h3>
                 
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Portfolio Page Heading<br>(2nd page) </label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" ng-model ="additionalXP.secondpageheading" ng-disabled="!isChecked"  placeholder="" id="allInputFieldsStyling">
+                <input type="text" class="form-control" ng-model ="additionalXP.secondpageheading" ng-disabled="!additionalXP.sectionIncluded"  placeholder="" id="allInputFieldsStyling">
                 </div>
            </div>
                 
             <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" for="heading">Portfolio Page Sub-Heading<br>(2nd page)</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" ng-model ="additionalXP.secondpagesubheading" ng-disabled="!isChecked" id="allInputFieldsStyling">
+                <input type="text" class="form-control" ng-model ="additionalXP.secondpagesubheading" ng-disabled="!additionalXP.sectionIncluded" id="allInputFieldsStyling">
                 </div>
            </div>
             
-                
-            
-                <hr id = "divider"> 
-                
-                
-                <!-- Below is to handle Additional Experience. There are several dynamic features:
-                    a..) There is a rule that will prevent users from adding more than 3 details. 
-                    b..) User clicks "Add Details of Experience" button to add 1 more Detail form. 
-                    c..) User clicks "Remove detail" button to remove the selected form. 
-ng-show = "showHideDetails($index)"
-                -->
-                
-                <div ng-repeat = "x in Details | limitTo: 3" >
-            <div style = "border-bottom:1px solid black; margin-bottom:10px;" >
-                <h4 id ="step6title" >Details of Experience {{$index + 1}}</h4>
-            <button type = "button" class= "btn btn-md" ng-disabled = "!isChecked" ng-click = "removeDetail($index)" ng-value = "{{$index+1}}" ng-hide = "$first"  id = "removeExperience"><span class="glyphicon glyphicon-minus-sign"  style="font-size:15px;"></span><span> Remove Detail </span> </button>
-                <div class="form-group"  >
-               <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" ng-disabled="!isChecked" ng-model = "x.heading"  id="allInputFieldsStyling">
-                </div>
-           </div>
-              <div class="form-group"  >
-               <label class="control-label col-sm-4 input-md" for="summary">Provide Supporting Information </label>
-                <div class="col-sm-5">
-                <textarea class="form-control" ng-disabled="!isChecked" rows="6"  id="allInputFieldsStyling" ng-model ="x.summary" ></textarea>
-                </div>
-              </div>
-                
-              <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="profile">Attach a Document</label>
-                <div class="col-sm-4">
-                 <input type="file" ng-disabled = "!isChecked" class="btn btn-default btn-file">
-                </div>
-             </div>
-                
-            
-            <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="profile">Include an Image</label>
-                <div class="col-sm-4">
-                 <input type="file"  ng-disabled = "!isChecked"class="btn btn-default btn-file" "x.image">
-                </div>
-             </div>
-            
-            <div class="form-group">
-               <label class="control-label col-sm-4 input-md" for="name_button">Name of button </label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" ng-disabled = "!isChecked" ng-model ="x.button" style="padding:10px; border:1px solid black;" placeholder="">
-                </div>
-           </div>   
-         
-            
-        </div>
-                    <div class = "col-xs-12">
-                    <p ng-show = "$last" ng-if ="Details.length>=3" style = "color:red;font-size:16px;" id = "addMoreExperience" class = "text-center">If you wish to add more Details or Additional Experiences, <a href ="#">please get in touch</a>.</p> 
-                        </div>
-        </div>
-                <button type = "button" id = "addMoreExperience" ng-if ="!(Details.length >= 3)" ng-click="addMoreExperience()" ng-disabled="!isChecked"   ><span class="glyphicon glyphicon-plus-sign"></span> Add Details of Experience {{Details.length + 1}} </button>
-                 
-            
+<div class = "form-group">
+	   <div class="col-xs-12" ng-show = "sectionhasbeensaved.additionalExperience">
+	         <button type = "button" class="btn btn-danger btn-block borders" ng-disabled="!additionalXP.sectionIncluded" id="button1" ng-click = "sendAdditionalXP()">Save and Add Details</button>
+	   </div>
     
-            <div class = "form-group">
-	   <div class="col-xs-12">
-	         <button type = "button" class="btn btn-danger btn-block borders" ng-disabled="!isChecked" id="button1" ng-click = "sendAdditionalXP()" >Save</button>
+    <div class="col-xs-12" ng-show = "!sectionhasbeensaved.additionalExperience">
+	         <button type = "button" class="btn btn-success btn-block borders"  id="button1" ng-click = "updateAdditionalXP()" >Edit</button>
 	   </div>
-	   </div>
+    
+    
+</div>
+            
+                
+                
+    <!-- 3 Cards for Details of Experience Section, will appear only when user has clicked on the Save & Add Details Button. Click to Open a Form Modal --> 
+        <div ng-show = "!sectionhasbeensaved.additionalExperience">
+                <h3 class = "text-center"><u>Tell us more about your Additional Experience</u></h3>
+            <p class = "text-center"> For the benefit of the Visitors to your Portfolio Website, provide as much as information about your additional experience as possible.</p>
+                
+<div class = "row">
+ <div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item" >
+   <h4 class="card-title">Details 1 </h4>
+             <a  ng-click = "showDetail1Modal()"  href style = "color:black;" ><p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+              <p ng-show = "sectionhasbeensaved.details1" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 1 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details1" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 1 has been added!</p> 
+                </a>
+ </div>
+
+<div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item" >
+    <a ng-click = "showDetail2Modal()"  href style = "color:black;"><h4 class="card-title">Details 2 </h4>
+            <p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+            <p ng-show = "sectionhasbeensaved.details2" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 2 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details2" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 2 has been added!</p> 
+     </a>
+ </div>
+    
+ <div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item"  >
+    <a ng-click = "showDetail3Modal()"  href style = "color:black;"><h4 class="card-file">Details 3 </h4>
+            <p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+              <p ng-show = "sectionhasbeensaved.details3" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 3 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details3" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 3 has been added!</p> 
+     </a>
+ </div>
+</div>
+            
+<div class = "row">
+ <div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item" >
+   <h4 class="card-title">Details 4 </h4>
+             <a  ng-click = "showDetail4Modal()"  href style = "color:black;" ><p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+              <p ng-show = "sectionhasbeensaved.details4" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 4 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details4" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 4 has been added!</p> 
+                </a>
+ </div>
+
+<div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item" >
+    <a ng-click = "showDetail5Modal()"  href style = "color:black;"><h4 class="card-title">Details 5 </h4>
+            <p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+            <p ng-show = "sectionhasbeensaved.details5" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 5 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details5" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 5 has been added!</p> 
+     </a>
+ </div>
+    
+ <div class="card card-block col-xs-3 text-center sampleDetailitem" id = "sample-item"  >
+    <a ng-click = "showDetail6Modal()"  href style = "color:black;"><h4 class="card-file">Details 6 </h4>
+            <p class="card-text"><span class="glyphicon glyphicon-info-sign" style = "font-size:xx-large;" ></span></p>
+              <p ng-show = "sectionhasbeensaved.details6" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Details 6 has NOT been added! </p>
+            <p ng-show = "!sectionhasbeensaved.details6" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Details 6 has been added!</p> 
+     </a>
+ </div>
+</div>
+              
+                
+                
+                
+                
+                
+                </div>
+                
             </form>  
         </div>
-            
-            <!--Keep purely for testing purposes 
-            <div class = "col-xs-3">
-                <h4><u>Additional Experience</u></h4>
-                <ul>
-            <li> Heading: {{additionalXP.heading}}</li>
-            <li> Summary: {{additionalXP.summary}}</li>
-            <li> Image: {{additionalXP.image}}</li>
-            <li> Button Name: {{additionalXP.button}}</li>
-                </ul>
-
-            <h4><u>Heading for 2nd page</u></h4>
-            <ul>
-            <li> Heading: {{additionalXP.secondpageheading}}</li>
-            <li> Summary: {{additionalXP.secondpagesubheading}}</li>
-</ul>
-         
-                <h4><u>Details</u></h4>
-            <ul ng-repeat = "x in Details">
-            <li> Heading: {{x.heading}}</li>
-            <li> Summary: {{x.summary}}</li>
-            <li> Image: {{x.image}}</li>
-            <li> Button Name: {{x.button}}</li>
-            </ul>
-            </div>
--->
-            
-           
-            
         </div>
         
 </section>

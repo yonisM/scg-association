@@ -1,22 +1,30 @@
 <section>
 	
-	<div class="container" ng-init = "hasCustomerEnteredPersonalFunc()">
+	<div class="container" ng-init = "hasCustomerEnteredPersonalFunc()" ng-controller = "userCtrl">
 
-	           <h2 class = "text-center"><u>My Personal Details</u></h2>
-       
-       <p class="text-danger text-center" id = "advisoryText">Any field that is marked with asterisk * is a required field</p>
-   
-        <!-- 
-            Clicking the submit button will result in the Customer's details being processed under the controller
-             step2AddPersonalDetailsCtrl in the controller.js file. Once in the controller.js file, their details will
-             then be carried over via the API and straight into the database. The moment this page, step2AddPersonalDetails is served
-             up, the route.js will make the step2AddPersonalDetailsCtrl available for use.
-        -->
-      
-        
+	
+         <!-- The Personal Detail form -->
+        <div class = "col-sm-8 pull-left col-sm-offset-2">
+            <div class="panel panel-default"  style = "margin-top:30px;">
+                <div class="panel-heading">
+                   <h4 class = "text-center"><u>My Personal Details</u></h4>
+                </div>
     
-    <form  name = "step1PersonalDetails " class="form-horizontal" novalidate>
-           <div class="form-group"  >
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <form  name = "step1PersonalDetails " class="form-horizontal" novalidate>
+               <h5 class="text-danger text-center" id = "advisoryText" style = "margin-top:10px;">Any field that is marked with asterisk * is a required field</h5>
+               
+        <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" >Customer ID </label>
+                <div class="col-sm-4">
+                <input type="text" class="form-control"  name="customerID" ng-model = "currentUser.id"   id="allInputFieldsStyling"  disabled> 
+                </div>
+                
+        </div>                   
+                                   
+        <div class="form-group"  >
                <label class="control-label col-sm-4 input-md" >First Name <span id="asterisks">&#42;</span></label>
                 <div class="col-sm-4">
                 <input type="text" class="form-control"  name="firstName" ng-model = "customerDetails.firstName"   id="allInputFieldsStyling"  required> 
@@ -35,7 +43,7 @@
         
            <div class="form-group">
                <label class="control-label col-sm-4 input-md" >Email Address </label>
-                <div class="col-sm-4" ng-controller = "userCtrl">
+                <div class="col-sm-4">
                 <input type="email" class="form-control" name="email" ng-model = "currentUser.email" id="allInputFieldsStyling" disabled>
                 </div> 
            </div>
@@ -47,8 +55,7 @@
                 <input type="text" class="form-control" ng-model="customerDetails.linkedin" id="allInputFieldsStyling">
                 </div>
            </div>
-        
-          
+    
       
      <div class="form-group">
 	   <div class="col-xs-12" ng-show = "!hasCustomerEnteredPersonal" >
@@ -66,14 +73,21 @@
          </div>
         
     </div>
-            
-      
-            
-            
+
             
         </form>
             
+                       
+                        </div>
+        
 	
         </div>
+    
+    
+    </div>
+    
+                </div>
+                </div>
+    </div>
 
 </section>
