@@ -1,0 +1,96 @@
+<div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header"> 
+                <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-center" >Sample Work 3</h4>
+                </div>
+        
+        <div class="modal-body">
+     <form class="form-horizontal">
+         
+       <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="heading">Heading</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "sampleWork3.heading">
+                </div>
+           </div>
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="title">Title of work</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;"  ng-model = "sampleWork3.title">
+                </div>
+           </div>
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="authors">Author(s)</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "sampleWork3.author">
+                </div>
+           </div>
+            <br>
+             <p class="text-center" style="font-weight:bold; color:red;">For multiple collaborators, separate with commas i.e. Amanda Legum, Jason Bourne</p>
+             <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="pub">Date of publication:</label>
+                <div class="col-sm-5">
+               <input type="date" datetime = "yyyy-MM-dd" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "sampleWork3.date">
+                </div>
+           </div>
+            <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="name_of_pub">Name of Publication:<br>Only required for published<br> academic papers</label>
+                <div class="col-sm-5">
+               <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "sampleWork3.publication">
+                </div>
+           </div>
+           <div class="form-group"  >
+               <label class="control-label col-sm-4" for="description">Description of sample work</label>
+                <div class="col-sm-5">
+                <textarea class="form-control" rows="6"  id="summary" style="padding:10px;border:1px solid black;"  ng-model = "sampleWork3.description"></textarea>
+                </div>
+           </div>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="attach">Attach your sample work</label>
+                <div class="col-sm-4">
+                 <input type="file" class="btn btn-default btn-file" ng-model = "sampleWork3.sampleFile">
+                </div>
+           </div>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="URL">Add URL links of your work</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;" ng-model = "sampleWork3.sampleWorkURL" >
+                </div>
+           </div>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="attach"  >Include an Image for this section</label>
+                <div class="col-sm-4">
+                 <input type="file" class="btn btn-default btn-file" ng-model = "sampleWork3.image">
+                </div>
+           </div>
+            <div class="form-group">
+               <label class="control-label col-sm-4 input-md" for="name_button" >Name of button </label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control"  style="padding:10px; border:1px solid black;"  ng-model = "sampleWork3.button">
+                </div>
+           </div>
+           
+     <div class="form-group">
+	   <div class="col-xs-12" ng-show = "sectionhasbeensaved.samplework3" >
+           <button type = "submit" class="btn btn-danger btn-block borders" id = "button1" ng-click = "sendSample3()"> Save </button>
+	   </div>
+          
+    
+         <div class="col-xs-12" ng-show = "!sectionhasbeensaved.samplework3"  >
+           <button type = "submit" class="btn btn-success btn-block borders" id = "button1" ng-click = "updateSample3()"> Edit </button>
+	   </div> 
+         </div>
+        
+           </form>
+    </div>
+
+           </div>
+        </div>
+     </div>
+
+
+
+
+

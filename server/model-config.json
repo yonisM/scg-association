@@ -63,12 +63,6 @@
     "$promise": {},
     "$resolved": true
   },
-  "sampleWork": {
-    "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
   "additionalXP": {
     "dataSource": "landsome",
     "public": true,
@@ -82,6 +76,66 @@
     "$resolved": true
   },
   "sectionSaved": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "testimonials": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "sampleWork3": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "sampleWork2": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "sampleWork1": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details1": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details2": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details3": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details4": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details5": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "details6": {
     "dataSource": "landsome",
     "public": true,
     "$promise": {},

@@ -1,17 +1,15 @@
-<section ng-init = "getThemeDetails()">
-    <div class="container" ng-init = "hasThemeSelectedFunc()">
+<section >
+    <div class="container" >
         
          <div class = "row">
              <a ui-sref = "dashboard" class = "btn btn-link pull-left"><span class ="glyphicon glyphicon-chevron-left"></span>Go to Dashboard </a>
              </div>
         
      
-    
+    <h2 class = "text-center"><u>Step 1: Select a Theme</u></h2>
         <div class = "visible-xs" id="mobileInfo"> Scroll down to the bottom of the page to save your Theme selection</div>
-        <form>
-            
-           
- 
+        
+    <form>
         <div class="row">
        <div class="col-md-12" > 
 	      <div class="col-xs-12 col-sm-6 col-md-3"  ng-repeat = "x in theme|orderBy:'themeNumber'">
@@ -25,26 +23,18 @@
 	       </div>
         </div>
         
-            
-    
+  
 	   <div class = "form-group">
-	           <div class="col-xs-12" ng-show = "!hasThemeSelected">
+	           <div class="col-xs-12" ng-show = "sectionhasbeensaved.themes">
 	               <button type = "button" class="btn btn-danger btn-block borders" ng-click = "saveTheme(selectedTheme)" id="button1">Save</button>
                 </div>
            
-        <div class="col-xs-12" ng-show = "hasThemeSelected" >
-           <button type = "submit" class="btn btn-success btn-block borders" id = "button1" ng-click = "updateTheme(selectedTheme)"> Edit </button>
-	   </div> 
-           
-           
+                <div class="col-xs-12" ng-show = "!sectionhasbeensaved.themes" >
+                    <button type = "submit" class="btn btn-success btn-block borders" id = "button1" ng-click = "updateTheme(selectedTheme)"> Edit </button>
+	           </div> 
 	   </div>
-        
-        
-            
-            
-            
-            
-        </form>
+
+    </form>
   
 </div> 
 </section>

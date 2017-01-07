@@ -25,10 +25,7 @@
     "secondpagesubheading": {
       "type": "string"
     },
-    "Details": {
-      "type": "object"
-    },
-    "showSaveButton": {
+    "sectionIncluded": {
       "type": "boolean"
     }
   },

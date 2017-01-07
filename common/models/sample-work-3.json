@@ -1,0 +1,51 @@
+{
+  "name": "sampleWork3",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publication": {
+      "type": "string"
+    },
+    "sampleFile": {
+      "type": "string"
+    },
+    "sampleWorkURL": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

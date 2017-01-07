@@ -1,14 +1,14 @@
-
+<div ng-controller = "themeCtrl"  ng-init = "getUserEntry()">
         
            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#/theme1"><span class="glyphicon glyphicon-home"></span></a> </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li> <a href="#/theme1#summary" target="_self"><span class="glyphicon glyphicon-blackboard"></span> {{summary.heading}}</a> </li>
-                    <li> <a href="#/theme1#field" target="_self"   ><span class="glyphicon glyphicon-book"></span> {{additionalInformation.fieldOfResearch}}</a> </li>
-                    <li> <a href="#/theme1#sample1" target = "_self" ><span class="glyphicon glyphicon-book"></span> Sample Work</a> </li>
+                    <li ng-show = "additionalInformation.sectionIncluded"> <a href="#/theme1#field" target="_self"   ><span class="glyphicon glyphicon-book"></span> {{additionalInformation.fieldOfResearch}}</a> </li>
+                    <li> <a href="#/theme1#sample" target = "_self" ><span class="glyphicon glyphicon-book"></span> Sample Work</a> </li>
                     <li> <a href="#/theme1#teach"><span class="glyphicon glyphicon-pencil"></span> Teaching Experience</a> </li>
                 </ul>
             </div>
@@ -47,35 +47,65 @@
         </div>  
 </div>
         
-          
-    <hr class="featurette-divider">
-        <h1 class = "text-center" id="sample1">My Sample Work</h1>
-   <div class="featurette"   ng-repeat = "x in sampleWork"> <img class="featurette-image img-circle img-responsive pull-right" height="500px" width="500px" src="http://dailygenius.com/wp-content/uploads/2015/12/Research.jpg"    >
-        <h2 class="featurette-heading">{{x.heading}} <span class="text-muted">{{x.title}}</span>
+<div ng-show = "!sectionhasbeensaved.samplework1">      
+    <hr class="featurette-divider" id = "sample">
+        <h4 class = "text-center">Sample Work 1</h4>
+   <div class="featurette"> <img class="featurette-image img-circle img-responsive pull-right" height="500px" width="500px" src="http://dailygenius.com/wp-content/uploads/2015/12/Research.jpg"    >
+        <h2 class="featurette-heading">{{sampleWork1.heading}} <span class="text-muted">{{sampleWork1.title}}</span>
            <!-- For referencing, could also add in the following {{x.date |date: 'dd.MM.yy'}},{{x.publication}} -->
-        <h3> By <cite> {{x.author}} </cite> </h3> </h2>
-        <p class="lead"> {{x.description}}  </p>
-        <p><a href = "{{x.sampleWorkURL}}" target = "_blank">{{x.sampleWorkURL}}</a></p>
-        <a href="documents/YOUR ACADEMIC PAPER.pdf" class="btn btn-danger"> {{x.button}} </a>
+        <h3> By <cite> {{sampleWork1.author}} </cite> </h3> </h2>
+        <p class="lead"> {{sampleWork1.description}}  </p>
+        <p><a href = "{{x.sampleWorkURL}}" target = "_blank">{{sampleWork1.sampleWorkURL}}</a></p>
+        <a href="documents/YOUR ACADEMIC PAPER.pdf" class="btn btn-danger"> {{sampleWork1.button}} </a>
     </div>
+</div> 
+      
+<div ng-show = "!sectionhasbeensaved.samplework2">   
+    <hr class="featurette-divider">
+         <h4 class = "text-center">Sample Work 2</h4>
+       <div class="featurette" > <img class="featurette-image img-circle img-responsive pull-left" height="500px" width="500px" src="http://dailygenius.com/wp-content/uploads/2015/12/Research.jpg"    >
+        <h2 class="featurette-heading">{{sampleWork2.heading}} <span class="text-muted">{{sampleWork2.title}}</span>
+           <!-- For referencing, could also add in the following {{x.date |date: 'dd.MM.yy'}},{{x.publication}} -->
+        <h3> By <cite> {{sampleWork2.author}} </cite> </h3> </h2>
+        <p class="lead"> {{sampleWork2.description}}  </p>
+        <p><a href = "{{sampleWork2.sampleWorkURL}}" target = "_blank">{{sampleWork2.sampleWorkURL}}</a></p>
+        <a href="documents/YOUR ACADEMIC PAPER.pdf" class="btn btn-danger"> {{sampleWork2.button}} </a>
+    </div>
+</div>
         
+<div ng-show = "!sectionhasbeensaved.samplework3">  
+        <hr class="featurette-divider">
+         <h4 class = "text-center">Sample Work 3</h4>
+           <div class="featurette" > <img class="featurette-image img-circle img-responsive pull-right" height="500px" width="500px" src="http://dailygenius.com/wp-content/uploads/2015/12/Research.jpg">
+        <h2 class="featurette-heading">{{sampleWork3.heading}} <span class="text-muted">{{sampleWork3.title}}</span>
+           <!-- For referencing, could also add in the following {{x.date |date: 'dd.MM.yy'}},{{x.publication}} -->
+        <h3> By <cite> {{sampleWork3.author}} </cite> </h3> </h2>
+        <p class="lead"> {{sampleWork3.description}}  </p>
+        <p><a href = "{{sampleWork3.sampleWorkURL}}" target = "_blank">{{sampleWork3.sampleWorkURL}}</a></p>
+        <a href="documents/YOUR ACADEMIC PAPER.pdf" class="btn btn-danger"> {{sampleWork3.button}} </a>
+    </div>
+</div>
         
     <hr class="featurette-divider">
     
-
+<div ng-show = "additionalXP.sectionIncluded">
     <div class="featurette" id="teach"> <img class="featurette-image img-circle img-responsive pull-left" height="500px" width="500px" src="http://cdn.skim.gs/images/v1/msi/yhzjjetflowhmtyefd4m/what-your-childs-teacher-wishes-you-knew">
-        <h2 class="featurette-heading">Teaching Experience </h2>
-        <p class="lead"> As an instructor in economics at an undergraduate level, I find that it's very important for my students to leave the course with not only competency in the course material, but the tools to succeed in future courses or endeavors. I also seek for them to be able to effectively communicate economic ideas and to be able to evaluate competing claims using economic principles learned in the course.  To this end, it is important that students are exposed to current research in the field..</p><a href="teaching.html" class="btn btn-danger"> View my Teaching Portfolio </a>
+        <h2 class="featurette-heading">{{additionalXP.heading}} </h2>
+        <p class="lead"> {{additionalXP.summary}}</p>
+            <a href="teaching.html" class="btn btn-danger">{{additionalXP.button}}</a>
     </div>
-    </div>
+</div>
+        
+        
 </div> 
+</div>
        
     
     <div class="container-width">
         <footer id="footer">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2016</p>
+                    <p>Copyright &copy; Your Website 2017</p>
                     <ul class="list-inline">
                         <li> <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a> </li>
                         <li> <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a> </li>
@@ -88,7 +118,7 @@
         </footer>
     </div>
        
-     
+</div>
        
        
       

@@ -7,7 +7,8 @@ angular
   .module('app', [
     'ui.router',
     'app.controllers',
-    'lbServices'
+    'lbServices',
+    'angularModalService'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
       $urlRouterProvider) {
@@ -34,6 +35,17 @@ angular
             views:{
                 'content':{
                      templateUrl: 'views/forbidden.html'
+                }
+            }
+      })
+    
+    
+    
+       .state('signupmessage', {
+        url: '/signupmessage',
+            views:{
+                'content':{
+                     templateUrl: 'views/signupmessage.html'
                 }
             }
       })
@@ -205,20 +217,68 @@ angular
   
   })
 
-  .state('step5AddSampleWorkS', {
-    url: '/sampleform',
+  .state('samplework1', {
+    url: '/samplework1',
           views:{
                'header':{
                 templateUrl: 'views/header.html'
             },
             'content':{
-                templateUrl: 'views/step5AddSampleWorkS.html',
+                templateUrl: 'views/samplework1.html',
                 controller: 'step5AddSampleWorkSCtrl'
             }
         },
          authenticate:true
   
   })
+
+      .state('samplework2', {
+    url: '/samplework2',
+          views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
+            'content':{
+                templateUrl: 'views/samplework2.html',
+                controller: 'step5AddSampleWorkSCtrl'
+            }
+        },
+         authenticate:true
+  
+  })
+    
+      .state('samplework3', {
+    url: '/samplework3',
+          views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
+            'content':{
+                templateUrl: 'views/samplework3.html',
+                controller: 'step5AddSampleWorkSCtrl'
+            }
+        },
+         authenticate:true
+  
+  })
+    
+
+
+    .state('sampleformComplete', {
+    url: '/sampleformComplete',
+          views:{
+               'header':{
+                templateUrl: 'views/header.html'
+            },
+            'content':{
+                templateUrl: 'views/sampleWorkAdded.html',
+                controller: 'step5AddSampleWorkSCtrl'
+            }
+        },
+         authenticate:true
+  
+  })
+    
 
   .state('step6AddAdditionalExperience', {
     url: '/additionalexperience',
