@@ -90,13 +90,7 @@ angular
                   controller: 'userCtrl'
             }
         }
-      
       })
-    
-    
-    
-    
-    
     
      
       .state('theme1', {
@@ -110,7 +104,22 @@ angular
   authenticate:true
   })
     
+    .state('goals', {
+    url: '/goals',
+      views:{
+          'header':{
+                  templateUrl: 'views/header.html',
+              },
+            'content':{
+             templateUrl: 'views/goals.html',
+            controller: 'goalCtrl'
+            }
+        },
+  authenticate:true
+  })
     
+    
+
     .state('checkout', {
     url: '/checkout',
           views:{

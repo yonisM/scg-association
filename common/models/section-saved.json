@@ -22,9 +22,6 @@
     "additionalExperience": {
       "type": "boolean"
     },
-    "goals": {
-      "type": "boolean"
-    },
     "details1": {
       "type": "boolean"
     },
@@ -50,6 +47,15 @@
       "type": "boolean"
     },
     "samplework3": {
+      "type": "boolean"
+    },
+    "opportunity": {
+      "type": "boolean"
+    },
+    "skill": {
+      "type": "boolean"
+    },
+    "ambition": {
       "type": "boolean"
     }
   },

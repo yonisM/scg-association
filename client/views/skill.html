@@ -1,0 +1,58 @@
+<div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header"> 
+                <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-center" >Your Skill Set</h4>
+                </div>
+                
+                   <div class="modal-body">
+            
+<form class = "form-horizontal"  >
+               
+    <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="summary">What do you do now? </label>
+                <div class="col-sm-5">
+                <textarea class="form-control"  rows="6"  id="allInputFieldsStyling" ng-model ="skill.currentOccupation" ></textarea>
+                </div>
+    </div>
+    
+
+    <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="summary">What skills do you require to be successful at your work</label>
+                <div class="col-sm-5">
+                <textarea class="form-control"  rows="6"  id="allInputFieldsStyling" ng-model ="skill.skillsToSucceedAtOccuptation" ></textarea>
+                </div>
+    </div>
+    
+      <div class="form-group"  >
+               <label class="control-label col-sm-4 input-md" for="summary">What skills are you looking to develop?</label>
+                <div class="col-sm-5">
+                <textarea class="form-control"  rows="6"  id="allInputFieldsStyling" ng-model ="skill.skillsToDevelop" ></textarea>
+                </div>
+    </div>
+    
+
+    
+    
+    <div class="form-group">
+	   <div class="col-xs-12" ng-show = "sectionhasbeensaved.skill" >
+           <button type = "button" class="btn btn-danger btn-block borders" id = "button1" ng-click = "sendSkill()"> Save </button>
+	   </div>
+          
+         <div class="col-xs-12" ng-show = "!sectionhasbeensaved.skill"  >
+           <button type = "button" class="btn btn-success btn-block borders" id = "button1" ng-click = "updateSkill()"> Edit </button>
+	   </div> 
+    </div>
+    
+</form>
+                </div>
+                
+                
+                
+                
+                
+                
+              </div>
+        </div>
+</div>
