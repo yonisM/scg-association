@@ -140,6 +140,21 @@
       "type": "hasOne",
       "model": "details6",
       "foreignKey": ""
+    },
+    "skills": {
+      "type": "hasOne",
+      "model": "skill",
+      "foreignKey": ""
+    },
+    "opportunities": {
+      "type": "hasOne",
+      "model": "opportunity",
+      "foreignKey": ""
+    },
+    "ambitions": {
+      "type": "hasOne",
+      "model": "ambition",
+      "foreignKey": ""
     }
   },
   "acls": [

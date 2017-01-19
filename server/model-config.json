@@ -140,5 +140,23 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "ambition": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "skill": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "opportunity": {
+    "dataSource": "landsome",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

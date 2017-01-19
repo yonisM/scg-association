@@ -1,0 +1,41 @@
+<div class = "container">
+    
+    
+     <div class = "row">
+             <a ui-sref = "dashboard" class = "btn btn-link pull-left"><span class ="glyphicon glyphicon-chevron-left"></span>Go to Dashboard </a>
+    </div>
+    
+    <h2 class = "text-center"><u>Step 6: Academic/Non-Academic Goals (OPTIONAL)</u></h2>
+    <p class = "text-center"> From Step 1 to 5, we will have enough information and evidence that will allow us to create a stunning to Portfolio Website. However, creating a Portfolio Website to showcase your incredible talents to the world is always the first step. The subsequent steps will involve us actively promoting and marketing you to perspective groups and employers.</p>
+    
+    
+    <p class = "text-center">To make it easier for us to market and promote you, provide as much information as you can about your experiences, skill sets, your ambitions, and what kind of opportunities you are open to. The more information and more perceived value provide, the more opportunities we can present and put you forward for. We will always contact you before putting you forward.   </p>
+    
+     <div class="card card-block col-xs-12 col-sm-5 portfolio-item text-center"  >
+             <a ng-click ="showAmbitionModal()" href style = "color:black;"><h4 class="card-title">Your Ambition </h4>
+            <p class="card-text"><i class= "material-icons" style = "font-size:50px" >motorcycles</i></p>
+            <p ng-show = "sectionhasbeensaved.ambition" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Section is NOT Complete! </p>
+            <p ng-show = "!sectionhasbeensaved.ambition" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Section has been completed!  </p> 
+          </a>
+    </div>
+    
+      <div class="card card-block col-xs-12 col-sm-5 portfolio-item text-center"  >
+             <a ng-click ="showSkillModal()" href style = "color:black;"><h4 class="card-title">Your Skill Set </h4>
+            <p class="card-text"><i class= "material-icons" style = "font-size:50px;" >build</i></p>
+            <p ng-show = "sectionhasbeensaved.skill" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Section is NOT Complete! </p>
+            <p ng-show = "!sectionhasbeensaved.skill" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Section has been completed!  </p> 
+          </a>
+    </div>
+    
+      <div class="card card-block col-xs-12 col-sm-6 col-sm-offset-3 portfolio-item-special text-center"   >
+             <a ng-click ="showOpportunityModal()" href style = "color:black;"><h4 class="card-title">What Kind of Opportunities are you Open to? </h4>
+            <p class="card-text"><i class= "material-icons" style = "font-size:50px;" >cloud_queue</i></p>
+            <p ng-show = "sectionhasbeensaved.opportunity" style = "color:red;"> <span class="glyphicon glyphicon-warning-sign"></span> Section is NOT Complete! </p>
+            <p ng-show = "!sectionhasbeensaved.opportunity" style = "color:green;"><span class="glyphicon glyphicon-check"></span> Section has been completed!  </p> 
+          </a>
+    </div>
+    
+   
+    
+    
+</div>

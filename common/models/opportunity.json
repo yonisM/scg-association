@@ -1,5 +1,5 @@
 {
-  "name": "sampleWork2",
+  "name": "opportunity",
   "base": "PersistedModel",
   "strict": false,
   "idInjection": false,
@@ -7,34 +7,25 @@
     "validateUpsert": true
   },
   "properties": {
-    "heading": {
+    "website": {
       "type": "string"
     },
-    "title": {
+    "podcast": {
       "type": "string"
     },
-    "author": {
+    "academicPublication": {
       "type": "string"
     },
-    "date": {
+    "booksArticles": {
       "type": "string"
     },
-    "publication": {
+    "lecture": {
       "type": "string"
     },
-    "description": {
+    "teaching": {
       "type": "string"
     },
-    "sampleWorkURL": {
-      "type": "string"
-    },
-    "button": {
-      "type": "string"
-    },
-    "sampleFile": {
-      "type": "string"
-    },
-    "image": {
+    "anythingElse": {
       "type": "string"
     }
   },

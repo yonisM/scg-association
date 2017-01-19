@@ -1,6 +1,198 @@
 angular.module('app.controllers', [])
 
 
+.controller('goalCtrl',['$scope', '$stateParams','Customer','$q','$location', 'ModalService','$window','$timeout','$state',
+   function ($scope, $stateParams, Customer, $q, $location, ModalService,$window,$timeout,$state) { 
+    //Get User ID 
+        var id = Customer.getCurrentId();
+       
+    //Return SavedSection values. Let's us know if section has been saved by User.
+        var sectionhasbeensaved = Customer.sectionSaveds({id:id});
+       $scope.sectionhasbeensaved = sectionhasbeensaved;
+       
+//Open and Close Ambition Modal 
+    $scope.showAmbitionModal = function() {
+        ModalService.showModal({
+        templateUrl: 'views/ambition.html',
+        controller: 'ambitionCtrl'
+  }).then(function(modal) {
+   modal.element.modal();
+    modal.close.then(function(result) {
+      //console.log(result);
+    });
+  });
+ };
+ 
+//Open and Close Skill Modal 
+    $scope.showSkillModal = function() {
+        ModalService.showModal({
+        templateUrl: 'views/skill.html',
+        controller: 'skillCtrl'
+  }).then(function(modal) {
+   modal.element.modal();
+    modal.close.then(function(result) {
+      //console.log(result);
+    });
+  });
+ };
+   
+//Open and Close Opportunities Modal 
+    $scope.showOpportunityModal = function() {
+        ModalService.showModal({
+        templateUrl: 'views/opportunity.html',
+        controller: 'opportunityCtrl'
+  }).then(function(modal) {
+   modal.element.modal();
+    modal.close.then(function(result) {
+      //console.log(result);
+    });
+  });
+ };
+ 
+}])
+
+
+.controller('ambitionCtrl',['$scope', '$stateParams','Customer','$q','$location', 'ModalService','$window','$timeout','$state',
+   function ($scope, $stateParams, Customer, $q, $location, ModalService,$window,$timeout,$state) { 
+          //Get User ID 
+        var id = Customer.getCurrentId();
+       
+    //Return SavedSection values. Let's us know if section has been saved by User.
+        var sectionhasbeensaved = Customer.sectionSaveds({id:id});
+       $scope.sectionhasbeensaved = sectionhasbeensaved;
+       
+       //Handle ambition
+       var ambition = {
+           howToAcheive:"",
+           yourAmbition:""
+       };
+       
+       
+       //Return User's ambition from the database
+    var ambition = Customer.ambitions({id:id});
+    $scope.ambition = ambition;
+       
+       
+       //Send User's ambition to the database for the first time
+       $scope.sendAmbition = function(){
+           Customer.ambitions.create({id:id},ambition)
+           .$promise
+           .then(function(){
+                Customer.sectionSaveds.update({id:id},{ambition:false});
+                location.reload();
+           });
+       };
+       
+       
+       //Update User's ambition in the database
+       $scope.updateAmbition = function(){
+           Customer.ambitions.update({id:id},ambition)
+           .$promise
+           .then(function(){
+                location.reload();
+           });
+       };
+   }])
+
+
+.controller('skillCtrl',['$scope', '$stateParams','Customer','$q','$location', 'ModalService','$window','$timeout','$state',
+   function ($scope, $stateParams, Customer, $q, $location, ModalService,$window,$timeout,$state) { 
+            
+       //Get User ID 
+        var id = Customer.getCurrentId();
+       
+    //Return SavedSection values. Let's us know if section has been saved by User.
+        var sectionhasbeensaved = Customer.sectionSaveds({id:id});
+       $scope.sectionhasbeensaved = sectionhasbeensaved;
+       
+       //Handle Skill
+       var skill = {
+           currentOccupation:"",
+           skillsToSucceedAtOccuptation:"",
+           skillsToDevelop:"",
+       };
+       
+       
+       //Return User's Skill from the database
+    var skill = Customer.skills({id:id});
+    
+       $scope.skill = skill;
+       
+       
+       //Send User's Skill to the database for the first time
+       $scope.sendSkill = function(){
+           Customer.skills.create({id:id},skill)
+           .$promise
+           .then(function(){
+                Customer.sectionSaveds.update({id:id},{skill:false});
+                location.reload();
+           });
+       };
+       
+       
+       //Update User's Skill in the database
+       $scope.updateSkill = function(){
+           Customer.skills.update({id:id},skill)
+           .$promise
+           .then(function(){
+                location.reload();
+           });
+       };
+
+   }])
+
+
+.controller('opportunityCtrl',['$scope', '$stateParams','Customer','$q','$location', 'ModalService','$window','$timeout','$state',
+   function ($scope, $stateParams, Customer, $q, $location, ModalService,$window,$timeout,$state) { 
+       
+    //Get User ID 
+        var id = Customer.getCurrentId();
+       
+    //Return SavedSection values. Let's us know if section has been saved by User.
+        var sectionhasbeensaved = Customer.sectionSaveds({id:id});
+       $scope.sectionhasbeensaved = sectionhasbeensaved;
+       
+       //Handle Opportunity
+       var opportunity = {
+           academicPublication:"",
+           anythingElse:"",
+           booksArticles:"",
+           lecture:"",
+           podcast:"",
+           teaching:"",
+           website:""
+         
+       };
+       
+       
+    //Return User's Opportunity from the database
+        var opportunity = Customer.opportunities({id:id});
+       $scope.opportunity = opportunity;
+       
+       
+ //Send User's Opportunity to the database for the first time
+       $scope.sendOpportunity = function(){
+           Customer.opportunities.create({id:id},opportunity)
+           .$promise
+           .then(function(){
+                Customer.sectionSaveds.update({id:id},{opportunity:false});
+                location.reload();
+           });
+       };
+       
+       
+//Update User's Opportunity in the database
+       $scope.updateOpportunity = function(){
+           Customer.opportunities.update({id:id},opportunity)
+           .$promise
+           .then(function(){
+                location.reload();
+           });
+       };
+
+   }])
+       
+       
 
 .controller('dashboardCtrl',['$scope', '$stateParams','Customer','$q','$location', 'ModalService','$window','$timeout','$state',
    function ($scope, $stateParams, Customer, $q, $location, ModalService,$window,$timeout,$state) { 
@@ -43,21 +235,15 @@ angular.module('app.controllers', [])
     });
   });
  };        
-       
-
-       
+          
   }])
-
-
-
-
 
 
 .controller('themeCtrl',['$scope', '$stateParams','Customer','$q','$location','$timeout',
    function ($scope, $stateParams, Customer, $q, $location,$timeout) {                                  
                                      
     
-       $scope.getUserEntry = function(){
+$scope.getUserEntry = function(){
 
 //Get User ID 
     var id = Customer.getCurrentId(); 
@@ -172,10 +358,10 @@ function ($scope, $stateParams, Theme, Customer,$state,ModalService) {
     
 }])
    
-.controller('step2AddPersonalDetailsCtrl', ['$scope', '$stateParams','PersonalDetails','Customer','LoopBackAuth','$q','$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('step2AddPersonalDetailsCtrl', ['$scope', '$stateParams','PersonalDetails','Customer','LoopBackAuth','$q','$state','$timeout', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, PersonalDetails,Customer,LoopBackAuth,$q,$state) {
+function ($scope, $stateParams, PersonalDetails,Customer,LoopBackAuth,$q,$state,$timeout) {
     
 
     //Get the Customer's Users ID number
@@ -211,8 +397,10 @@ function ($scope, $stateParams, PersonalDetails,Customer,LoopBackAuth,$q,$state)
         details6:true,
         fieldOfResearch: true,
         additionalExperience: true,
-        goals: true
-        
+        goals: true,
+        ambition:true,
+        skill:true,
+        opportunity:true
     };
     
     $scope.sectionSaved = sectionSaved;
@@ -244,10 +432,10 @@ function ($scope, $stateParams, PersonalDetails,Customer,LoopBackAuth,$q,$state)
         Customer.personalDetails.create({id:customerID},customerDetails)
         .$promise
         .then(function(){
-            Customer.sectionSaveds.create({id:customerID},sectionSaved); 
-            location.reload();
-            $state.go("myaccount"); 
-            
+            Customer.sectionSaveds.create({id:customerID},sectionSaved);    
+            $timeout(function(){
+                $state.go("myaccount"); 
+            },1500);
         });       
     };
     
@@ -258,16 +446,13 @@ function ($scope, $stateParams, PersonalDetails,Customer,LoopBackAuth,$q,$state)
         Customer.personalDetails.update({id:customerID},customerDetails)
         .$promise
         .then(function(){
-          location.reload();
-        $state.go("myaccount"); 
+        $timeout(function(){
+                $state.go("myaccount"); 
+            },1500);
         }); 
         
     };
         
-        
-        
-
-
 }])
    
 .controller('step3SummaryCtrl', ['$scope', '$stateParams','Summary','$q','Customer','$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -941,19 +1126,17 @@ $scope.updateDetails6 = function(){
 
 }])
 
-.controller('userCtrl', ['$scope', '$stateParams','Customer','$state','$q','$timeout','ModalService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('userCtrl', ['$scope', '$stateParams','Customer','$state','$q','$timeout','ModalService','$timeout', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 
     
-function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService) {
+function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService,$timeout) {
    
     $scope.signuperror = false;
     $scope.loginerror = false; 
     
- 
-    
-    
+
     //sign up a new user. Email address and Password only
     var signup = {
         email: "",
@@ -977,6 +1160,9 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService) {
     
    
     //Login an exisiting user via login page
+    
+    $scope.loginButton = "Log In";
+    
     var login = {
       email:"",
         password:"" 
@@ -989,20 +1175,32 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService) {
         Customer.login(login)
         .$promise
         .then(function(success) {
-            location.reload();
-            $state.go('dashboard');
+            $scope.loginButton = "Login Successful...Please Wait.";
+     
+            $timeout(function(){
+                $state.go('dashboard');
+            },2000);
+            
+             $timeout(function(){
+                location.reload();
+            },3000);
+            
         },function(reason){
             $scope.loginerror = true;  
         });
          
     };
     
+    
     //Login an new user via success signup page
       $scope.loginNewUser = function(){
         Customer.login(login)
         .$promise
         .then(function(success) {
-    $state.go('step2AddPersonalDetails');
+    $scope.loginButton = "Login Successful...Please Wait.";
+         $timeout(function(){
+                $state.go('step2AddPersonalDetails');
+            },2000);   
         },function(reason){
             $scope.loginerror = true;  
         });
@@ -1051,8 +1249,6 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService) {
     
  
 
-    //All customer details
-   // $scope.AllCustomerDetails = Customer.find();
   
 
 }]) 
