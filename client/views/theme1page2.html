@@ -1,0 +1,122 @@
+<div ng-controller = "themeCtrl"  ng-init = "getUserEntryForSecondPage()">    
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              
+                <h2 ><a href="#/theme1" class= "backButton" style = "color:#9d9d9d;"><span class="glyphicon glyphicon-chevron-left"></span> Back</a></h2>
+            </div>
+          
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>{{additionalXP.secondpageheading}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+<br>
+       
+        <div class="featurette" id="details1" ng-show = "!sectionhasbeensaved.details1">
+            <img class="featurette-image img-circle img-responsive pull-left" height = "500px"  width = "500px"src="http://www.1stcontact.com/blog/wp-content/uploads/2015/08/Three-students-taking-a-test-resized.jpg">
+            <h2 class="featurette-heading">{{details1.heading}}</h2>
+            <p class="lead"> {{details1.summary}}</p>
+        <a href = "documents/samplepresentation.pdf" class = "btn btn-danger"> {{details1.button}} </a>
+		</div>
+
+        
+        
+        <div class="featurette" id="details2" ng-show = "!sectionhasbeensaved.details2">
+             <hr class="featurette-divider">
+            <img class="featurette-image img-circle img-responsive pull-right" width = "500px" height = "500px" src="http://www.1stcontact.com/blog/wp-content/uploads/2015/08/Three-students-taking-a-test-resized.jpg">
+            <h2 class="featurette-heading"> {{details2.heading}}</h2>
+                <p class="lead"> {{details2.summary}}</p>
+       <a href = "documents/samplepresentation.pdf" class = "btn btn-danger"> {{details2.button}} </a>
+	   </div>
+	   
+					
+	   
+		
+        <div class="featurette" id="details3" ng-show = "!sectionhasbeensaved.details3">
+             <hr class="featurette-divider">
+            <img class="featurette-image img-circle img-responsive pull-left" height = "500px"  width = "500px" src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/15677/s300_TSsb10069478s-001_Student_giving_presentation.jpg">
+            <h2 class="featurette-heading">{{details3.heading}}</h2>
+            <p class="lead"> {{details3.summary}}</p>
+        <a href = "documents/samplestudentwork" class = "btn btn-danger"> {{details3.button}} </a>
+		</div>
+		
+		
+		   
+		
+		  
+        <div class="featurette" id="details4" ng-show = "!sectionhasbeensaved.details4">
+             <hr class="featurette-divider">
+            <img class="featurette-image img-circle img-responsive pull-right" width = "500px" height = "500px" src="http://www.1stcontact.com/blog/wp-content/uploads/2015/08/Three-students-taking-a-test-resized.jpg">
+            <h2 class="featurette-heading"> {{details4.heading}}</h2>
+                <p class="lead"> {{details4.summary}}</p>
+       <a href = "documents/samplepresentation.pdf" class = "btn btn-danger"> {{details4.button}} </a>
+	   </div>
+	   
+				
+		
+        <div class="featurette" id="details5" ng-show = "!sectionhasbeensaved.details5">
+            <hr class="featurette-divider">
+            <img class="featurette-image img-circle img-responsive pull-left" height = "500px"  width = "500px" src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/15677/s300_TSsb10069478s-001_Student_giving_presentation.jpg">
+            <h2 class="featurette-heading">{{details5.heading}}</h2>
+            <p class="lead"> {{details5.summary}}</p>
+        <a href = "documents/samplestudentwork" class = "btn btn-danger"> {{details5.button}} </a>
+		</div>
+		
+           
+		
+        <div class="featurette" id="details6" ng-show = "!sectionhasbeensaved.details5">
+             <hr class="featurette-divider">
+            <img class="featurette-image img-circle img-responsive pull-right" width = "500px" height = "500px" src="http://www.1stcontact.com/blog/wp-content/uploads/2015/08/Three-students-taking-a-test-resized.jpg">
+            <h2 class="featurette-heading"> {{details6.heading}}</h2>
+                <p class="lead"> {{details6.summary}}</p>
+       <a href = "documents/samplepresentation.pdf" class = "btn btn-danger"> {{details6.button}} </a>
+	   </div>
+	   
+				
+    
+    </div>
+	
+	        <!-- Footer -->
+<div class = "container-width">
+        <footer id= "footer" >
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2017</p>
+					
+					<ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </footer>
+	</div>	
+</div>

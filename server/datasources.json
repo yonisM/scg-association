@@ -13,18 +13,31 @@
     "connector": "cloudant",
     "user": "dc51f6ce-ebf8-41e2-8c51-c02d06b87526-bluemix"
   },
-  "Credentials-1": {
-    "url": "https://identity.open.softlayer.com",
-    "password": "D=4/zr0!}a(X0tHC",
-    "name": "Credentials-1",
-    "user": "admin_d3071d915888085e85f1cb991513e4ba7ba9bd42",
-    "connector": "",
+  "credentials": {
+    "username": "admin_bc23188e4e0174c04867f69c693b71de5b8fff4a",
+    "password": "n]fn{7.}UO8RSXK/",
+    "name": "credentials",
+    "auth_url": "https://identity.open.softlayer.com",
     "project": "object_storage_bb582816_77be_4ac7_baa3_a8f51cb457c3",
     "projectId": "5a27668ffb69407a8c79f4068c13f133",
     "region": "dallas",
-    "userId": "8f1d524e814d42278cc3c9a01490a83d",
+    "userId": "c561639753a0471d9ed5c3ebfd225313",
     "domainId": "436b3c921e134b0c968eee5f826a3781",
     "domainName": "1158501",
     "role": "admin"
+  },
+  "amazonS3": {
+    "name": "amazonS3",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "key": "d+rBnD2k6/He3IHg9MwgdurGR9gJQ2AIrQ7HZBal",
+    "keyId": "AKIAJ7SOUQRIMAO5YHHA",
+    "region":"eu-west-2"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
   }
 }

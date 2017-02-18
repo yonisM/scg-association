@@ -7,26 +7,29 @@
     "validateUpsert": true
   },
   "properties": {
-    "website": {
-      "type": "string"
-    },
-    "podcast": {
-      "type": "string"
-    },
     "academicPublication": {
-      "type": "string"
-    },
-    "booksArticles": {
-      "type": "string"
-    },
-    "lecture": {
-      "type": "string"
-    },
-    "teaching": {
-      "type": "string"
+      "type": "boolean"
     },
     "anythingElse": {
-      "type": "string"
+      "type": "boolean"
+    },
+    "booksArticles": {
+      "type": "boolean"
+    },
+    "lecture": {
+      "type": "boolean"
+    },
+    "podcast": {
+      "type": "boolean"
+    },
+    "teaching": {
+      "type": "boolean"
+    },
+    "website": {
+      "type": "boolean"
+    },
+    "moreAboutWebsite": {
+      "type": "boolean"
     }
   },
   "validations": [],

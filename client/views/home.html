@@ -8,7 +8,7 @@
     
      <img src="images/homePage.jpeg"  width = "500px" height = "300px" alt="" class="img-responsive center-block">
    <h1 class="text-center" style="font-weight:bold;">Generate an Academic Portfolio Website </h1>
-   <h3 class="text-center"> Just fill out some forms and it is done. It super easy, quick and free.  </h3>
+   <h3 class="text-center">Just fill in some sort forms - and you're done! It super easy, quick and free.  </h3>
    
    <button type = "button" ui-sref="signup" class="btn btn-danger btn-sm" id="button1">Get Started For Free </button>
    
@@ -62,17 +62,17 @@
         <p>Your Academic Online Portfolio is up and running!</p>
 </div>
     
-    
-    
-    
+
 </div>
+
+  <button type = "button" ui-sref="signup" class="btn btn-danger btn-sm" id="button1">Get Started For Free </button>
        
        <hr id ="divider" style = "margin-top:30px;">
    
     
     <h2 class="text-center">Our Services </h2>
     <div class = "container">
-        <p class = "text-center"> We know from experience that a lot of effort needs to go into creating an Academic Portfolio Website. So we have made the process of creating an Academic Portfolio so simple that all you need to do is provide the content and we do the rest. When we say we will do the rest, we mean :   </p>
+        <p class = "text-center"> We know from experience that a lot of effort needs to go into creating an Academic Portfolio Website. So we have made the process of creating an Academic Portfolio so simple that all you need to do is provide the content. We do the rest. When we say we will do the rest, we mean :   </p>
     
       <div class="col-xs-12 col-sm-6  text-center" >
         <p><i class="material-icons" style="color:green; font-size:80px; ">search</i></p>
@@ -162,52 +162,19 @@ weekly report we send you and see for yourself!</p>
       <hr id = "divider">
     
     
-       <div class = "container">
-       <form  name="feedback" class="form-horizontal clearfix" >
-          <h3 class="text-center" style="margin-top:10px;"> Have A Question For Us</h3>
-           <p class="text-center">Are you interest in what we have to offer but are to sure if we offer the right product for you?<br> Leave your details with us and we will gladly arrange a suitable time to have a quick chat with you via email or over the phone.</p>
-           <div class="form-group">
-               <label class="control-label col-sm-4 input-md" >Full Name</label>
-                <div class="col-sm-6 col-md-4">
-                <input type="text"   class="form-control" name="fullname" ng-model="feedbackform.fullname" id="allInputFieldsStyling" required>
-                <p ng-show="feedback.fullname.$error.required && feedback.fullname.$dirty " style="color:maroon "> Please Enter your full name </p>
-                </div>
-           </div>
-            <div class="form-group">
-               <label class="control-label col-sm-4 input-md" >Email Address</label>
-                <div class="col-sm-6 col-md-4">
-                <input type="email"   class="form-control" name="email" ng-model="feedbackform.email" id="allInputFieldsStyling" required>
-                 <p ng-show="feedback.email.$error.required && !feedback.email.$pristine " style="color:maroon "> Please Enter your Email address </p>
-                   <p ng-show="feedback.email.$invalid && feedback.email.$dirty " style="color:maroon "> Please Enter a valid Email address </p>
-                </div>
-           </div>
-         <div class="form-group">
-            
-               <label class="control-label col-sm-4 input-md" >Subject Line</label>
-                 <div class="col-sm-6 col-md-4">
-                <input type="text"  class="form-control" name="subject" ng-model="feedbackform.subject" id="allInputFieldsStyling" required>
-                 <p ng-show="feedback.subject.$error.required && feedback.subject.$dirty " style="color:maroon "> Please Type In a Subject Line </p>
-                </div>
-           
-           </div>
-            <div class="form-group">
-               <label class="control-label col-sm-4 input-md" >Message</label>
-                 <div class="col-sm-6 col-md-4">
-                <textarea class="form-control" rows="6"   name="msg"  ng-model="feedbackform.msg" style="padding:10px;border:1px solid black;" required></textarea>
-                <p ng-show="feedback.msg.$error.required && feedback.msg.$dirty " style="color:maroon "> Please Type In Your Message </p>
-                
-                </div>
-           
-           </div>
+<div class = "container">
+       
+          <h2 class="text-center" style="margin-top:10px;"> Have A Question For Us</h2>
+           <p class="text-center">Are you interest in what we have to offer but are to sure if we offer the right product for you?<br> Send us and we will gladly arrange a suitable time to have a quick chat with you via email or over the phone.</p>
+       
            
          <div class="form-group">
-         <div class="col-sm-4"></div>
-	   <div class="col-sm-6 col-md-4">
-           <button type = "submit"  ng-disabled="feedback.$invalid" class="btn btn-danger btn-block borders"> Submit </button>
+	   <div class="col-sm-12">
+           <a href="mailto:yonis.mohamoud@live.co.uk?Subject=Query%20for%20Landsome%20Online%20Portfolio%20:%20" target="_top" id = "button1" class="btn btn-danger btn-block borders"> <span class="glyphicon glyphicon-envelope"></span> Send us an email </a>
 	   </div>
 	   </div>
   
-       </form>
+       
 </div>
      
         <div class="col-xs-12 text-center " style="background-color:#b4b6ba; margin-top: 10px;  margin-bottom:5px; ">

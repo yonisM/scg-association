@@ -47,12 +47,22 @@
                 <textarea class="form-control" rows="6"  id="summary" style="padding:10px;border:1px solid black;"  ng-model = "sampleWork1.description"></textarea>
                 </div>
            </div>
+        
+      
+         
+         <!-- Upload a file -->
+         
             <div class="form-group">
                <label class="control-label col-sm-4 input-md" for="attach">Attach your sample work</label>
                 <div class="col-sm-4">
-                 <input type="file" class="btn btn-default btn-file" ng-model = "sampleWork1.sampleFile">
+                 <input type="file" ng-model = "sampleworkFile" class="btn btn-default btn-file" >
                 </div>
            </div>
+         
+         <p>{{sampleworkFile}}</p>
+                
+         <!-- End Upload a file     -->
+         
             <div class="form-group">
                <label class="control-label col-sm-4 input-md" for="URL">Add URL links of your work</label>
                 <div class="col-sm-5">

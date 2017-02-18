@@ -156,12 +156,13 @@ angular.module('app.controllers', [])
        var opportunity = {
            academicPublication:"",
            anythingElse:"",
+           fullTimeNonAcademicJob:"",
            booksArticles:"",
            lecture:"",
            podcast:"",
            teaching:"",
-           website:""
-         
+           website:"",
+           moreAboutWebsite:""
        };
        
        
@@ -287,8 +288,72 @@ $scope.getUserEntry = function(){
        };
        
 
+
        
+       
+$scope.getUserEntryForSecondPage = function(){
+    
+    //Get Current Customer's User ID. 
+    var id = Customer.getCurrentId();
+    
+    //Return SavedSection values
+    $scope.sectionhasbeensaved = Customer.sectionSaveds({id:id});
+    
+
+    //Return User's additional experience
+    $timeout(function(){       
+   var additionalXP = Customer.additionalXPs({id:id}); 
+    $scope.additionalXP = additionalXP;    
+            },1000);     
+          
       
+    
+    //Return User's Detail 1
+       $timeout(function(){ 
+       var details1 = Customer.details1s({id:id});
+         $scope.details1 = details1;
+       },2000);
+  
+         
+         
+    //Return User's Detail 2
+    $timeout(function(){ 
+       var details2 = Customer.details2s({id:id});
+          $scope.details2 = details2;
+    },3000);
+         
+           
+    //Return User's Detail 3
+    $timeout(function(){
+       var details3 = Customer.details3s({id:id});
+          $scope.details3 = details3;
+         },4000);
+         
+         
+    //Return User's Detail 4
+        $timeout(function(){
+       var details4 = Customer.details4s({id:id});  
+          $scope.details4 = details4;
+             },5000);
+         
+      
+    //Return User's Detail 5
+        $timeout(function(){
+       var details5 = Customer.details5s({id:id});
+          $scope.details5 = details5;
+             },6000);
+    
+         
+     //Return User's Detail 6
+        $timeout(function(){
+       var details6 = Customer.details6s({id:id});
+          $scope.detaisl6 = details6;
+             },7000);
+         
+         
+     };
+       
+ 
    }])
                                      
 
@@ -585,10 +650,10 @@ function ($scope, $stateParams, Customer,$state) {
 
 }])
    
-.controller('step5AddSampleWorkSCtrl', ['$scope', '$stateParams','Customer','$state','ModalService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('step5AddSampleWorkSCtrl', ['$scope', '$stateParams','Customer','$state','ModalService','Container', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,Customer,$state,ModalService) {
+function ($scope, $stateParams,Customer,$state,ModalService,Container) {
     
 
 //Open and Close Sample Work 1 Modal 
@@ -636,13 +701,28 @@ function ($scope, $stateParams,Customer,$state,ModalService) {
      
 /*Return sectionSaveds values.See the Controller step2AddPersonalDetailsCtrl for more information */
     $scope.sectionhasbeensaved = Customer.sectionSaveds({id:id});
- 
+
+
+    
+// Get Container Details   
+var landsome = "landsome";
+var fileToDownload = "Yonis initial analysis nerai website.docx"; 
+    
+  var load = Container.getFile({container:landsome},{files:fileToDownload});
+  $scope.load = load; 
+    
+    
+$scope.download = function(landsome,fileToDownload){
+    Container.getFile({container:landsome},{files:fileToDownload});
+};    
+    
+
 }])
 
 
 
 .controller('sample1Ctrl', ['$scope','$stateParams','Customer','$q','$state',
-        function ($scope, $stateParams,Customer,$q,$state) {
+        function ($scope, $stateParams,Customer,$q,$state,Container,FileUploader) {
   
 //Get Current Customer's User ID. 
      var id = Customer.getCurrentId();
@@ -650,10 +730,12 @@ function ($scope, $stateParams,Customer,$state,ModalService) {
 /*Return sectionSaveds values.See the Controller step2AddPersonalDetailsCtrl for more information */
     $scope.sectionhasbeensaved = Customer.sectionSaveds({id:id});   
            
+    
      
 //handling the sample work models
-      var sampleWork1 = {heading:"",title:"",author:"",date: "",publication:"",description:"",sampleFile:"",sampleWorkURL:"",image:"", button:""};
-  
+      var sampleWork1 = {heading:"",title:"",author:"",date: "",publication:"",description:"",sampleWorkURL:"",image:"", button:""};
+            
+
 //Get Customer's Sample Work from Database. Information will be received
     var sampleWork1 = Customer.sampleWork1s({id:id});
     $scope.sampleWork1 = sampleWork1;
@@ -661,9 +743,9 @@ function ($scope, $stateParams,Customer,$state,ModalService) {
             
 //Save Customer's sampleWork to the database for the first time.
 $scope.sendSample1 = function(){   
-        Customer.sampleWork1s.create({id:id},sampleWork1)
-        .$promise
-        .then(function(){
+    Customer.sampleWork1s.create({id:id},sampleWork1)
+     .$promise
+     .then(function(){
             Customer.sectionSaveds.update({id:id},{samplework1:false});
             location.reload();
               });   
@@ -671,12 +753,16 @@ $scope.sendSample1 = function(){
             
 //Update Customer's Summary when user has made an entry before.  
 $scope.updateSample1 = function(){
-        Customer.sampleWork1s.update({id:id},sampleWork1)
-            .$promise
-            .then(function(){
-            location.reload();
+    Customer.sampleWork1s.update({id:id},sampleWork1)
+     .$promise
+     .then(function(){
+      location.reload();
             }); 
     };      
+            
+            
+          
+            
 }])
 
 .controller('sample2Ctrl', ['$scope','$stateParams','Customer','$q','$state',
@@ -1246,9 +1332,10 @@ function ($scope, $stateParams,Customer,$state,$q,$timeout,ModalService,$timeout
     $scope.customerID = customerID;
     
     $scope.isAuthenticated = Customer.isAuthenticated(); 
-    
- 
-
-  
 
 }]) 
+
+
+
+
+

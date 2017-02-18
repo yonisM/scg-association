@@ -8,7 +8,8 @@ angular
     'ui.router',
     'app.controllers',
     'lbServices',
-    'angularModalService'
+    'angularModalService',
+    'angularFileUpload'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
       $urlRouterProvider) {
@@ -97,12 +98,30 @@ angular
     url: '/theme1',
       views:{
             'content':{
-             templateUrl: 'views/theme1.html',
+             templateUrl: 'views/theme1home.html',
             controller: 'themeCtrl'
             }
         },
   authenticate:true
   })
+    
+          .state('theme1/page2', {
+    url: '/theme1/page2',
+      views:{
+            'content':{
+             templateUrl: 'views/theme1page2.html',
+            controller: 'themeCtrl'
+            }
+        },
+  authenticate:true
+  })
+    
+    
+    
+    
+    
+    
+    
     
     .state('goals', {
     url: '/goals',
