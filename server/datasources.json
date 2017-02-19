@@ -32,7 +32,7 @@
     "provider": "amazon",
     "key": "d+rBnD2k6/He3IHg9MwgdurGR9gJQ2AIrQ7HZBal",
     "keyId": "AKIAJ7SOUQRIMAO5YHHA",
-    "region":"eu-west-2"
+    "region": "eu-west-2"
   },
   "storage": {
     "name": "storage",

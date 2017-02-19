@@ -39,12 +39,6 @@
   "Note": {
     "dataSource": "db"
   },
-  "theme": {
-    "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
   "personalDetails": {
     "dataSource": "landsome",
     "public": true,
@@ -64,12 +58,6 @@
     "$resolved": true
   },
   "additionalXP": {
-    "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
-  "themeSelection": {
     "dataSource": "landsome",
     "public": true,
     "$promise": {},
@@ -105,12 +93,6 @@
     "$promise": {},
     "$resolved": true
   },
-  "details1": {
-    "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
   "details2": {
     "dataSource": "landsome",
     "public": true,
@@ -141,12 +123,6 @@
     "$promise": {},
     "$resolved": true
   },
-  "ambition": {
-    "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
   "skill": {
     "dataSource": "landsome",
     "public": true,
@@ -155,12 +131,6 @@
   },
   "opportunity": {
     "dataSource": "landsome",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
-  "Container": {
-    "dataSource": "amazonS3",
     "public": true,
     "$promise": {},
     "$resolved": true
