@@ -135,8 +135,12 @@
     margin-left: 5%;
     margin-bottom: 15px;
 }
-    
+       
 }
+
+
+
+
 
 
 @media (min-width: 768px) {
@@ -174,7 +178,7 @@
     margin-bottom: 15px;
 }
     
-    
+  
 }
 
 @media (min-width: 992px) {
@@ -197,6 +201,14 @@
     margin-left:1%;
     
 }
+    #visible{
+        border-right: 2px solid black;
+        visibility: visible;
+    }
+  
      
 }
+
+   
+
 
