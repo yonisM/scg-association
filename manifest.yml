@@ -3,10 +3,7 @@ applications:
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: landsome
-  host: landsome
-  disk_quota: 512M
-  services:
-  - Cloudant NoSQL DB-eq
-  - Object Storage-mz
+  name: sgcAssociation
+  host: somglobal
+  disk_quota: 1024M
   command: node .
