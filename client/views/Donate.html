@@ -1,82 +1,171 @@
-<div class="container">
-     <div class="col-md-2"></div>
-      <div class="col-md-8">
-      <div class="panel panel-primary">
-    <div class="panel-heading text-center" style="background-color:#5f9b23; "><h2 >Donate Now</h2><h2 >Or Call Us on 01908 354233</h2></div>
-                <div class="panel-body">
-                 <div>
-                     <h4 class="col-sm-4">I want to make a</h4><div class="col-sm-5"><select class="form-control" ><option value="Monthly" >Monthly</option>
-                  </select></div><h4 style="text-indent:1em;">Donation of:</h4><br></div>
-                 
-    <div class="col-md-4">
-                     <div class="panel panel-primary">
-    <div class="panel-heading text-center" style="background-color:red;"><i class="material-icons" style="color:black; font-size:40px;">&#xE193;</i></div> 
-                <div class="panel-body">
-                     <h3 class="text-center">&#163;5</h3>
-    
-                  </div>
-          </div>
-          </div>
-                   <div class="col-md-4">
-                      <div class="panel panel-primary">
-    <div class="panel-heading text-center" style="background-color:yellow;"><i class="material-icons" style="color:black; font-size:40px;">&#xE84E;</i></div>
-                <div class="panel-body">
-                     <h3 class="text-center">&#163;20</h3>
-                
-                  </div>
-          </div>
-                      </div>
-        <div class="col-md-4">
-                     <div class="panel panel-primary">
-    <div class="panel-heading text-center" style="background-color:#8acc49;"><i class="material-icons" style="color:black; font-size:40px;">&#xE925;</i></div>
-                <div class="panel-body">
-                     <h3 class="text-center">&#163;35</h3>
-    
-                  </div>
-             
-          </div>             
 
-                  </div>
-                  <div class="text-center">
-                   <a href="#" class="btn btn-danger" role="button"><i class="fa fa-credit-card-alt" aria-hidden="true" style="color:black;"></i> Pay Another Amount?</a></div>
-                  
-                  </div>
-                  
-                  </div>
+<script>
+
+ga('set', 'page', '/donate');
+ga('send', 'pageview');
+
+</script>
+
+<div class="container">
+<div class = "row">
+   <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-primary">
+         <div class="panel-heading text-center" style="background-color:#5f9b23; ">
+            <p style = "font-size: large;">Donate Now</p>
+            <p style = "font-size: large;">Or Call Us on 01908 354233</p>
+         </div>
+         <div class="panel-body">
+            <div>
+                <p>I want to make ...</p>
+                  <select class="form-control" id = "allInputFieldsStyling" ng-model = "selected" ng-change = "donationOptionSelection()">
+                    <option value="single" ng-selected="true"> a SINGLE Payment of:</option>
+                    <option value="monthly" > a MONTHLY Payment of:</option>
+                    <option value="annual" > an ANNUAL Payment of:</option>
+                  </select>
+               <br>
+            </div>
             
              
-  </div>
-  
-
-<div class="row">
-
-     <div class="col-md-12">
-       
-         <hr id="divider">
-<h3 class="text-center">How Your Donations will help </h3>
-<hr id="divider">
-    <div class="col-md-4">
-       
-        <img src="http://placehold.it/360x150" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
-        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.</p>
-        <br><br>
-    </div>
-    <div class="col-md-4">
-         <img src="http://placehold.it/360x150" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
-        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.</p>
-        <br><br>
-    </div>
-    <div class="col-md-4">
-         <img src="http://placehold.it/360x150" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
-        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.</p>
-    </div>
-     </div>
+             <!-- Show for single payments only  -->
+             
+            <div ng-show = "single">
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:red;"><i class="material-icons" style="color:black; font-size:40px;">favorite_border</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;25</h3>
+                  </div>
+               </div>
+             </a>
+            </div>
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:yellow;"><i class="material-icons" style="color:black; font-size:40px;">&#xE84E;</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;35</h3>
+                  </div>
+                   </div>
+                </a>
+            </div>
+            
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:#8acc49;"><i class="material-icons" style="color:black; font-size:40px;">&#xE925;</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;45</h3>
+                  </div>
+                   </div>
+               </a>
+            </div>
+        </div>
+             
+        <!-- End for Single Payment -->
+             
+             
+             
+        <!-- Show for Monthly payments only  -->
+            <div ng-show = "monthly">
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:lightblue;"><i class="material-icons" style="color:black; font-size:40px;">&#xE193;</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;5</h3>
+                  </div>
+               </div>
+             </a>
+            </div>
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:#9966FF;"><i class="material-icons" style="color:black; font-size:40px;">change_history</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;20</h3>
+                  </div>
+                   </div>
+                </a>
+            </div>
+            
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:#980000;"><i class="material-icons" style="color:black; font-size:40px;">build</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;35</h3>
+                  </div>
+                   </div>
+               </a>
+            </div>
+        </div>
+             
+        <!-- End for Monthly Payment -->
+             
+             
+             
+      <!-- Show for Annual payments only  -->
+            <div ng-show = "annual">
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:orange;"><i class="material-icons" style="color:black; font-size:40px;">donut_small</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;200</h3>
+                  </div>
+               </div>
+             </a>
+            </div>
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:pink;"><i class="material-icons" style="color:black; font-size:40px;">fingerprint</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;300</h3>
+                  </div>
+                   </div>
+                </a>
+            </div>
+            
+            
+             <div class="col-sm-4">
+               <a href = "#"><div class="panel panel-primary">
+                  <div class="panel-heading text-center" style="background-color:lightgrey;"><i class="material-icons" style="color:black; font-size:40px;">language</i></div>
+                  <div class="panel-body">
+                     <h3 class="text-center" style = "color:black;">&#163;500</h3>
+                  </div>
+                   </div>
+               </a>
+            </div>
+        </div>
+             
+        <!-- End for Monthly Payment -->
+     
+            <div class="text-center">
+               <a href="#" class="btn btn-danger" role="button"><i class="fa fa-credit-card-alt" aria-hidden="true" style="color:black;"></i> Pay Another Amount?</a>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
- 
-</div>
-
     
-
-
-
     
+   
+   <div class="row">
+            <h3 class="text-center" style = "margin-top:20px;margin-bottom:30px;">How Your Donations Will Help </h3>
+         <div class="col-sm-4">
+            <img src="images/images13.jpg" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
+            <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.</p>
+            <br><br>
+         </div>
+         <div class="col-sm-4">
+            <img src="images/images14.jpeg" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
+            <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic..</p>
+            <br><br>
+         </div>
+         <div class="col-sm-4">
+            <img src="images/images15.jpg" style="margin-right:5px;" class="img-responsive pull-left"  alt="">
+            <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos, itaque suscipit aliquid! Ex recusandae quis quas incidunt, quia reiciendis ad sunt minus fuga soluta ipsum maiores quam perferendis hic.</p>
+         </div>
+      </div>
+   </div>
+
+

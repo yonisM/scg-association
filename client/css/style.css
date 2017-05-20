@@ -1,6 +1,7 @@
 #allInputFieldsStyling{
     padding:10px;
     border:1px solid black;
+    height: 40px;
 }
 
 #asterisks{
@@ -84,7 +85,10 @@
     background-color:lightgrey; 
 }
 
-
+.socialNetwork {
+    margin-left:10px;
+    color:black;
+}
 
 .sampleDetailitem {
     margin-bottom: 25px;
@@ -99,7 +103,7 @@
     border-color: #74a8fc;
     padding-bottom: 20px; 
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .navbar-custom .navbar-nav > li > a {
@@ -218,7 +222,11 @@
 }
     
 .navbar-nav>li {
-    margin-left: 15px;
+    margin-left: 1px;
+}
+
+.navbar-nav>li>a {
+    padding: 10px 13px;
 }
     
   
@@ -250,12 +258,9 @@
     }
     
    
-.navbar-nav {
-    margin-left: 5%;
-}
     
 .navbar-nav>li {
-    margin-left: 40px;
+    margin-left: 30px;
 }
     
      

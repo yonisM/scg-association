@@ -14,11 +14,39 @@
         <link href="css/style.css" rel="stylesheet">
       
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	    <script src="https://use.fontawesome.com/dec5749e2a.js"></script>
+      
 
+       <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Somalia.svg/255px-Flag_of_Somalia.svg.png"> 
+      
   </head>
     
   <body>
+      
+ <!-- Google Analytics -->      
+    
+<script>
+    
+  
+    
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98439613-1', 'auto');
+   
+<!-- Use the following plugins -->
+    
+ga('require', 'eventTracker');
+ga('require', 'outboundLinkTracker');
+ga('require', 'urlChangeTracker');
+    
+
+ ga('send', 'pageview');
+    
+    
+
+</script>
+      
+      
+      
     <div ui-view = "header"></div>
     <div ui-view = "content"></div>
     <div ui-view = "footer"></div>
@@ -26,7 +54,9 @@
     
     <script src="vendor/angular-resource.js"></script>
     <script src="vendor/angular-ui-router.js"></script>
-    <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script>  
+    <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <script async src="vendor/autotrack.js"></script>
     <script src="js/app.js"></script>
     <script src="js/lb-services.js"></script>
     <script src="js/controllers.js"></script>
